@@ -15,12 +15,19 @@ def secret_code(max_range):
     return secret_code
 
 
-enigma_code = secret_code(50)
+enigma_code = secret_code(10)
 print(enigma_code)
-
-# Enigma game will run below here
 game_title = pyfiglet.figlet_format("Enigma", font="isometric1")
 print(game_title)
-print("\nWelcome to the Enigma!!!\n")
+
+# Enigma game will run below here
+welcome = pyfiglet.figlet_format("Welcome to the Enigma", font="digital")
+print(welcome + "\n")
 print("Can you crack the code and win the war\n")
-print("Guess all 4 numbers in the correct location to crack the enigma code!!!\n")
+print("Guess all 4 numbers to crack the enigma code!\n")
+
+# Variables to store the palyers guesses
+attempt1 = int(input("Please guess the first number: "))
+attempt2 = int(input("Please guess the second number: "))
+attempt3 = int(input("Please guess the third number: "))
+attempt4 = int(input("Please guess the fourth number: "))

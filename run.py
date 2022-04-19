@@ -20,14 +20,36 @@ print(enigma_code)
 game_title = pyfiglet.figlet_format("Enigma", font="isometric1")
 print(game_title)
 
+
 # Enigma game will run below here
 welcome = pyfiglet.figlet_format("Welcome to the Enigma", font="digital")
 print(welcome + "\n")
 print("Can you crack the code and win the war\n")
 print("Guess all 4 numbers to crack the enigma code!\n")
 
-# Variables to store the palyers guesses
-attempt1 = int(input("Please guess the first number: "))
-attempt2 = int(input("Please guess the second number: "))
-attempt3 = int(input("Please guess the third number: "))
-attempt4 = int(input("Please guess the fourth number: "))
+
+# Variable to store the correct guesses and attempts
+correct = 0
+attempts = 0
+
+
+# Variables to store the players guesses
+while correct < 4:
+    attempt1 = int(input("Please guess the first number: "))
+    attempt2 = int(input("Please guess the second number: "))
+    attempt3 = int(input("Please guess the third number: "))
+    attempt4 = int(input("Please guess the fourth number: "))
+    attempts += 1
+
+    if attempt1 == enigma_code[0]:
+        correct += 1
+    if attempt2 == enigma_code[1]:
+        correct += 1
+    if attempt3 == enigma_code[2]:
+        correct += 1
+    if attempt4 == enigma_code[3]:
+        correct += 1
+
+    if correct < 4:
+        print("You cracked " + str(correct) + " numbers correcty")
+        correct = 0

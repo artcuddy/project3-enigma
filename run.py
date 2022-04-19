@@ -51,5 +51,11 @@ while correct < 4:
         correct += 1
 
     if correct < 4:
-        print("You cracked " + str(correct) + " numbers correcty")
+        print("\nYou cracked " + str(correct) + " numbers correctly\n")
         correct = 0
+        continue
+    else:
+        if attempts == 1:
+            print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " try.\n")
+        else: 
+            print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " tries.\n")

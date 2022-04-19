@@ -5,10 +5,6 @@ import random
 import pyfiglet
 
 
-gametitle = pyfiglet.figlet_format("Enigma", font="isometric1")
-print(gametitle)
-
-
 def secret_code(max_range):
     """
     Generate random 4 number code
@@ -21,3 +17,10 @@ def secret_code(max_range):
 
 enigma_code = secret_code(50)
 print(enigma_code)
+
+# Enigma game will run below here
+game_title = pyfiglet.figlet_format("Enigma", font="isometric1")
+print(game_title)
+print("\nWelcome to the Enigma!!!\n")
+print("Can you crack the code and win the war\n")
+print("Guess all 4 numbers in the correct location to crack the enigma code!!!\n")

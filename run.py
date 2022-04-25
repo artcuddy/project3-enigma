@@ -1,5 +1,5 @@
 """
-import pygiglet to style the game title
+#import pygiglet to style the game title
 """
 import random
 import pyfiglet
@@ -57,5 +57,5 @@ while correct < 4:
     else:
         if attempts == 1:
             print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " try.\n")
-        else: 
+        else:
             print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " tries.\n")

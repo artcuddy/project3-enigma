@@ -1,8 +1,9 @@
 """
-#import pygiglet to style the game title
+import pygiglet to style the game title
 """
 import random
-import pyfiglet
+from termcolor import colored
+from pyfiglet import Figlet
 
 
 def secret_code(max_range):
@@ -17,13 +18,13 @@ def secret_code(max_range):
 
 enigma_code = secret_code(10)
 print(enigma_code)
-game_title = pyfiglet.figlet_format("Enigma", font="isometric1")
-print(game_title)
+f = Figlet(font='banner3-D')
+print(colored(f.renderText('ENIGMA'), 'red'))
 
 
 # Enigma game will run below here
-welcome = pyfiglet.figlet_format("Welcome to the Enigma", font="digital")
-print(welcome + "\n")
+f = Figlet(font='digital')
+print(colored(f.renderText('Welcome to ENIGMA'), 'green'))
 print("Can you crack the code and win the war\n")
 print("Guess all 4 numbers to crack the enigma code!\n")
 

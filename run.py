@@ -1,6 +1,4 @@
-"""
-import pygiglet to style the game title
-"""
+# import packages to add to program
 import random
 from termcolor import colored
 from pyfiglet import Figlet
@@ -24,9 +22,8 @@ print(colored(f.renderText('ENIGMA'), 'red'))
 
 # Enigma game will run below here
 f = Figlet(font='digital')
-print(colored(f.renderText('Welcome to ENIGMA'), 'green'))
-print("Can you crack the code and win the war\n")
-print("Guess all 4 numbers to crack the enigma code!\n")
+print(colored(f.renderText('Can you crack the code'), 'green'))
+print("Guess all 4 numbers to crack the ENIGMA code!\n")
 
 
 # Variable to store the correct guesses and attempts

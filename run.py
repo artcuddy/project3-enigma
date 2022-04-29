@@ -54,6 +54,8 @@ while correct < 4:
         continue
     else:
         if attempts == 1:
-            print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " try.\n")
+            print("\nCongratulations you cracked the Enigma code!!" +
+                  "You did it in " + str(attempts) + " try.\n")
         else:
-            print("\nCongratulations you cracked the Enigma code!! You did it in " + str(attempts) + " tries.\n")
+            print("\nCongratulations you cracked the Enigma code!!" +
+                  "You did it in " + str(attempts) + " tries.\n")

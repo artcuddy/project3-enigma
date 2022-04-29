@@ -29,16 +29,16 @@ def secret_code(max_range):
 
 enigma_code = secret_code(10)
 print(enigma_code)
-f = Figlet(font='banner3-D')
-print(colored(f.renderText('ENIGMA'), 'red'))
+heading = Figlet(font='banner3-D')
+print(colored(heading.renderText('ENIGMA'), 'red'))
 
 
 def welcome():
     """
     ENIGMA Title & welcome message
     """
-    f = Figlet(font='digital')
-    print(colored(f.renderText('Can you crack the code'), 'green'))
+    sub_heading = Figlet(font='digital')
+    print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
     print("Guess all 4 numbers to crack the ENIGMA code!\n")
 
 

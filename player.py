@@ -30,7 +30,8 @@ class Player:
         """
         try:
             if len(username) == 0:
-                raise ValueError(colored('Input cannot be empty please enter codename', 'red'))
+                raise ValueError(colored('Input cannot be' +
+                                         'empty please enter codename', 'red'))
 
         except ValueError as error:
             print(colored(f'Try again! {error}', 'red'))

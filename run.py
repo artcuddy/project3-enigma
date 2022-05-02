@@ -2,9 +2,6 @@
 # import os to help clear terminal
 import os
 
-# import player class
-from player import Player
-
 # import random module
 import random
 
@@ -13,6 +10,9 @@ from termcolor import colored
 
 # import pyfiglet for ascii art
 from pyfiglet import Figlet
+
+# import player class
+from player import Player
 
 
 def clear_game():

@@ -17,8 +17,23 @@ class Player:
         """
         while True:
             username_data = input("Enter your codename here to start play:\n")
-            print(colored('\nWelcome ' + f'{username_data}\n', 'green'))
-            print('Can you crack the' + (colored(' ENIGMA ', 'red') 
-                  + 'code in 10 or less guesses!\n'))
-            break
-      
+
+            if self.validate_data(username_data):
+                print(colored('\nWelcome ' + f'{username_data}\n', 'green'))
+                print('Can you crack the' + (colored(' ENIGMA ', 'red')
+                      + 'code in 10 or less guesses!\n'))
+                break
+
+    def validate_data(self, username):
+        """
+        Validates the username input
+        """
+        try:
+            if len(username) == 0:
+                raise ValueError(colored('Input cannot be empty please enter codename', 'red'))
+
+        except ValueError as error:
+            print(colored(f'Try again! {error}', 'red'))
+            return False
+
+        return True

@@ -1,9 +1,6 @@
 """ Player Class sets up player object """
 # import termcolor for adding colour to text
-from termcolor import colored, cprint
-
-print_red = lambda x: cprint(x, 'red')
-print_green = lambda x: cprint(x, 'green')
+from termcolor import colored
 
 
 class Player:
@@ -20,5 +17,8 @@ class Player:
         """
         while True:
             username_data = input("Enter your codename here to start play:\n")
-            print_green('\nWelcome ' + f'{username_data}')
+            print(colored('\nWelcome ' + f'{username_data}\n', 'green'))
+            print('Can you crack the' + (colored(' ENIGMA ', 'red') 
+                  + 'code in 10 or less guesses!\n'))
+            break
       

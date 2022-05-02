@@ -12,6 +12,23 @@ from termcolor import colored
 from pyfiglet import Figlet
 
 
+class Player:
+    """
+    Player class get the players input for name, 
+    option to view help instructions.
+    Validate players quess inputs 
+    and return vaildation
+    """
+
+    def get_player_name(self):
+        """
+        Get username input from player
+        """
+        while True:
+            username_data = input("Enter your codename here to start play:\n")
+
+
+
 def clear():
     """
     Clear screen for user on replay

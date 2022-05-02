@@ -45,11 +45,10 @@ class Player:
 
         return True
 
-
     def game_control(self):
         """
         Give the player the option to disply help
-        or intructions 
+        or intructions
         """
         control_select = input(
             'To see game help enter ' +
@@ -58,3 +57,5 @@ class Player:
             colored('P ', 'green') +
             'to Play game:\n').lower()
 
+        if control_select == 'h':
+            print(colored('\nHOW TO PLAY ENIGMA:\n', 'green'))

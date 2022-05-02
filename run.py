@@ -55,6 +55,7 @@ def main():
 
     # calling the methods using the object player
     player.get_player_name()
+    player.game_control()
 
     # Variable to store the correct guesses and attempts
     correct = 0
@@ -62,10 +63,10 @@ def main():
 
     # Variables to store the players guesses
     while correct < 4:
-        attempt1 = int(input("Please guess the first number: "))
-        attempt2 = int(input("Please guess the second number: "))
-        attempt3 = int(input("Please guess the third number: "))
-        attempt4 = int(input("Please guess the fourth number: "))
+        attempt1 = int(input('Please guess the first number: '))
+        attempt2 = int(input('Please guess the second number: '))
+        attempt3 = int(input('Please guess the third number: '))
+        attempt4 = int(input('Please guess the fourth number: '))
         attempts += 1
 
         if attempt1 == enigma_code[0]:
@@ -78,17 +79,17 @@ def main():
             correct += 1
 
         if correct < 4:
-            print("\nYou cracked " + str(correct) + " numbers correctly\n")
+            print('\nYou cracked ' + str(correct) + ' numbers correctly\n')
             correct = 0
             continue
         else:
             if attempts == 1:
-                print("\nCongratulations you cracked the Enigma code!!" +
-                      "You did it in " + str(attempts) + " try.\n")
+                print('\nCongratulations you cracked the Enigma code!!' +
+                      ' You did it in ' + str(attempts) + ' try.\n')
             else:
-                print("\nCongratulations you cracked the Enigma code!!" +
-                      "You did it in " + str(attempts) + " tries.\n")
+                print('\nCongratulations you cracked the Enigma code!!' +
+                      ' You did it in ' + str(attempts) + ' tries.\n')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

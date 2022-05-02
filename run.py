@@ -2,6 +2,9 @@
 # import os to help clear terminal
 import os
 
+# import player class
+from player import Player
+
 # import random module
 import random
 
@@ -47,6 +50,11 @@ def main():
     Run all program functions and methods
     """
     welcome()
+
+    player = Player()
+
+    # calling the methods using the object player
+    player.get_player_name()
 
     # Variable to store the correct guesses and attempts
     correct = 0

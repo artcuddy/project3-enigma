@@ -17,3 +17,4 @@ class Player:
         """
         while True:
             username_data = input("Enter your codename here to start play:\n")
+            print(colored("\nWelcome " + f"{username_data}"), 'green')

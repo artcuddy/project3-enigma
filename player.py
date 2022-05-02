@@ -58,4 +58,15 @@ class Player:
             'to Play game:\n').lower()
 
         if control_select == 'h':
-            print(colored('\nHOW TO PLAY ENIGMA:\n', 'green'))
+            print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
+            print('You have ' + colored('10', 'yellow') + ' attempts ' +
+                  'to guess the ENIGMA code\n')
+            print('The ENIGMA code is 4 random numbers between 1-10')
+            print('Numbers may be repeated within the ENIGMA code!\n')
+
+        elif control_select == "p":
+            print(colored("Let's Get Cracking!\n", 'red'))
+
+        else:
+            print(colored('Sorry, that is not a valid response\n', 'red'))
+            self.game_control()

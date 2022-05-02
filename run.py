@@ -53,7 +53,7 @@ def main():
 
     player = Player()
 
-    # calling the methods using the object player
+    # calling the methods in the Player class
     player.get_player_name()
     player.game_control()
 

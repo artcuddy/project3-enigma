@@ -65,7 +65,7 @@ class Player:
             print('Numbers may be repeated within the ENIGMA code!\n')
 
         elif control_select == "p":
-            print(colored("Let's Get Cracking!\n", 'red'))
+            print(colored("\nLet's Get Cracking!\n", 'green'))
 
         else:
             print(colored('Sorry, that is not a valid response\n', 'red'))

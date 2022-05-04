@@ -70,7 +70,7 @@ def main():
         attempts += 1
 
         player_guesses = (str(attempt1) + ' ' + str(attempt2) + ' ' +
-                           str(attempt3) + ' ' + str(attempt4))
+                          str(attempt3) + ' ' + str(attempt4))
 
         if attempt1 == enigma_code[0]:
             correct += 1

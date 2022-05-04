@@ -70,3 +70,19 @@ class Player:
         else:
             print(colored('Sorry, that is not a valid entry\n', 'red'))
             self.game_control()
+
+    def validate_guess_input(self, player_attempts):
+        """
+        Validates the players input guess to be only 4 numbers and between 1-10
+        """
+        try:
+            for i in player_attempts:
+                if i >= 11 or i <= 0:
+                    raise ValueError(
+                        "Only guess numbers between 1 - 10."
+                        )
+        except ValueError as error:
+            print(f'{error} Sorry number not valid. Please try again.\n')
+            return False
+
+        return True

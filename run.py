@@ -88,7 +88,7 @@ def main():
             continue
         elif correct == 1:
             print('\nYou cracked ' + str(correct) + ' number correctly\n')
-            print('\nYou guessed ' + str(player_guesses) + ' \n')
+            print('You guessed ' + str(player_guesses) + ' \n')
             correct = 0
             continue
         else:

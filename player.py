@@ -47,7 +47,7 @@ class Player:
 
     def game_control(self):
         """
-        Give the player the option to disply help
+        Give the player the option to display help
         or intructions
         """
         control_select = input(

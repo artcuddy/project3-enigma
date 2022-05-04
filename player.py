@@ -68,5 +68,5 @@ class Player:
             print(colored("\nLet's Get Cracking!\n", 'green'))
 
         else:
-            print(colored('Sorry, that is not a valid response\n', 'red'))
+            print(colored('Sorry, that is not a valid entry\n', 'red'))
             self.game_control()

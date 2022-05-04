@@ -69,7 +69,7 @@ def main():
         attempt4 = int(input('Please guess the 4th number: '))
         attempts += 1
 
-        player_attempts = (str(attempt1) + ' ' + str(attempt2) + ' ' +
+        player_guesses = (str(attempt1) + ' ' + str(attempt2) + ' ' +
                            str(attempt3) + ' ' + str(attempt4))
 
         if attempt1 == enigma_code[0]:
@@ -81,12 +81,14 @@ def main():
         if attempt4 == enigma_code[3]:
             correct += 1
 
-        if correct < 4:
+        if correct < 4 and correct > 1:
             print('\nYou cracked ' + str(correct) + ' numbers correctly\n')
-            # print('You guessed ' + str(attempt1) + ' ' +
-            #       str(attempt2) + ' ' + str(attempt3) +
-            #       ' ' + str(attempt4) + '\n')
-            print('\nYou guessed ' + str(player_attempts) + ' \n')
+            print('\nYou guessed ' + str(player_guesses) + ' \n')
+            correct = 0
+            continue
+        elif correct == 1:
+            print('\nYou cracked ' + str(correct) + ' number correctly\n')
+            print('\nYou guessed ' + str(player_guesses) + ' \n')
             correct = 0
             continue
         else:

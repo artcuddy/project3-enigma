@@ -1,0 +1,75 @@
+""" ENIGMA Game generates the secret code and validates input """
+# import random module
+import random
+
+# import termcolor for adding colour to text
+from termcolor import colored
+
+
+class Code:
+    """
+    Secret code class get the players
+    input for guessing the code.
+    Validate players quess inputs
+    and return vaildation
+    """
+
+    @staticmethod
+    def random_code(max_range):
+        """
+        Generate random secret code here
+        """
+        random_nums = []
+        # using list comprehension + randint()
+        # to generate random number list
+        for _ in range(4):
+            random_nums.append(random.randint(1, max_range))
+        return random_nums
+
+    @staticmethod
+    def match_position(secret_code, user_guess):
+        """
+        Finds the position of the matched numbers
+        """
+        for nums in range(0, 4):
+            if secret_code[nums] == user_guess:
+                return nums
+
+    def calculate_code_hint(self, secret_code, user_guess):
+        """
+        Compare user guess against secret code and provide hints
+        """
+        code_hint_green = []
+        code_hint_orange = []
+        # Variables to put back in a list to
+        # check against again on next guess
+        guess = list(user_guess)
+        code = list(secret_code)
+        # Loop through to find exact matches
+        for i in range(0, 4):
+            if guess[i] == code[i]:
+                code[i] = "-"
+                guess[i] = ""
+                code_hint_green.append(colored('GREEN', 'green'))
+        # Loop through to find exact numbers in wrong position
+        for i in range(0, 4):
+            if guess[i] in code:
+                matched_position = self.match_position(code, guess[i])
+                code[matched_position] = '-'
+                guess[i] = ""
+                code_hint_orange.append(colored('ORANGE', 'orange'))
+
+        # Iterate through each item and
+        # join both lists for printing colour with colorama
+        code_hint = (
+            ' '.join(str(item) for item in code_hint_green)) + (" ") + (
+                ' '.join(str(item) for item in code_hint_orange))
+
+        # to ensure no blank code hint printed for positive UX
+        if not code_hint_green and not code_hint_orange:
+            print(
+                'Code Hint: ' +
+                colored('None of those numbers are' +
+                        'in the secret code\n', 'red'))
+        else:
+            print(f"Code Hint: {code_hint}\n")

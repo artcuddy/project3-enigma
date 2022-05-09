@@ -98,12 +98,13 @@ def check_win(response_list):
     """
     if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
         win_message = Figlet(font='banner3-D')
-        print(colored(win_message.renderText('YOU WON'), 'green'))
-        print("To play again, type play_game() into the console")
+        print(colored(win_message.renderText('\nYOU WON'), 'green'))
+        print("\nThe ENIGMA code was: " + player_list)
+        start_new_game()
         return True
 
 
-def play_game():  # Reset score & code, new game
+def main():
     """
     Run all program functions and methods
     """
@@ -128,12 +129,25 @@ def play_game():  # Reset score & code, new game
                 lose_message = Figlet(font='banner3-D')
                 print(colored(lose_message.renderText('YOU LOSE'), 'red'))
                 print("You are out of attempts! GAME OVER.")
-                human_list = ""
+                player_list = ""
                 for i in range(4):
-                    human_list += str(computer_list[i])
-                print("\nThe ENIGMA code was: " + human_list)
-                print("To play again, type play_game() into the console")
+                    player_list += str(computer_list[i])
+                print("\nThe ENIGMA code was: " + player_list)
+                start_new_game()
+
                 break
+
+
+def start_new_game():
+    """
+    Reset score & code, start new game
+    """
+    play_again = input('\nTo play again, type yes ' +
+                       'or no and hit enter: ')
+    if play_again == 'yes':
+        main()
+    else:
+        exit()
 
 
 def welcome():
@@ -148,4 +162,5 @@ def welcome():
     print("Guess all 4 numbers to crack the ENIGMA code!\n")
 
 
-play_game()
+if __name__ == '__main__':
+    main()

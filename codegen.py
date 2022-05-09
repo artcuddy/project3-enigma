@@ -14,62 +14,19 @@ class Code:
     and return vaildation
     """
 
-    @staticmethod
-    def random_code(max_range):
-        """
-        Generate random secret code here
-        """
-        random_nums = []
-        # using list comprehension + randint()
-        # to generate random number list
-        for _ in range(4):
-            random_nums.append(random.randint(1, max_range))
-        return random_nums
+    # Create a four digit random number
+    def create_secret_code(self): # Create the secret code
+        nums = [i+1 for i in range(7)]
+        num_list = []
 
-    @staticmethod
-    def match_position(secret_code, user_guess):
-        """
-        Finds the position of the matched numbers
-        """
-        for nums in range(0, 4):
-            if secret_code[nums] == user_guess:
-                return nums
+        for i in range(4):
+            choice = random.choice(nums)
+            while choice in num_list:
+                choice = random.choice(nums)
+            num_list.append(choice)
 
-    def calculate_code_hint(self, secret_code, user_guess):
-        """
-        Compare user guess against secret code and provide hints
-        """
-        code_hint_green = []
-        code_hint_orange = []
-        # Variables to put back in a list to
-        # check against again on next guess
-        guess = list(user_guess)
-        code = list(secret_code)
-        # Loop through to find exact matches
-        for i in range(0, 4):
-            if guess[i] == code[i]:
-                code[i] = "-"
-                guess[i] = ""
-                code_hint_green.append(colored('GREEN', 'green'))
-        # Loop through to find exact numbers in wrong position
-        for i in range(0, 4):
-            if guess[i] in code:
-                matched_position = self.match_position(code, guess[i])
-                code[matched_position] = '-'
-                guess[i] = ""
-                code_hint_orange.append(colored('ORANGE', 'orange'))
+        return num_list
 
-        # Iterate through each item and
-        # join both lists for printing colour with colorama
-        code_hint = (
-            ' '.join(str(item) for item in code_hint_green)) + (" ") + (
-                ' '.join(str(item) for item in code_hint_orange))
+    secret_code = create_secret_code()
+    print(secret_code)
 
-        # to ensure no blank code hint printed for positive UX
-        if not code_hint_green and not code_hint_orange:
-            print(
-                'Code Hint: ' +
-                colored('None of those numbers are' +
-                        'in the secret code\n', 'red'))
-        else:
-            print(f"Code Hint: {code_hint}\n")

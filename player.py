@@ -16,7 +16,7 @@ class Player:
         Get username input from player
         """
         while True:
-            username_data = input("Enter your codename here to start play:\n")
+            username_data = input("Enter your name here to start play:\n")
 
             if self.validate_data(username_data):
                 print(colored('\nWelcome ' +
@@ -61,8 +61,21 @@ class Player:
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
             print('You have ' + colored('10', 'yellow') + ' attempts ' +
                   'to guess the ENIGMA code\n')
-            print('The ENIGMA code is 4 random numbers between 1-10')
-            print('Numbers may be repeated within the ENIGMA code!\n')
+            print('The ENIGMA code is 4 random numbers between 1-9')
+            print('\nYour guess must be 4 digits, and ' +
+                  'you can only use the same digit once!')
+            print('All digits in the code must be between 1 and 9')
+            print("The guess format works in two ways: '1234' or '1 2 3 4'")
+            print('----------')
+            print('\nAfter each guess, you will get ' +
+                  'four responses in random order:\n')
+            print("GREEN: One of your numbers is correct " +
+                  "& it's in the correct location!")
+            print("YELLOW: One of your numbers is correct, " +
+                  "but it's not in the correct location!")
+            print('RED: One of your numbers is not in the ENIGMA code')
+            print('----------')
+            print(colored("\nLet's Get Cracking!\n", 'green'))
 
         elif control_select == "p":
             print(colored("\nLet's Get Cracking!\n", 'green'))

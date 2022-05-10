@@ -76,29 +76,35 @@ class Player:
             'to Play game:\n').lower()
 
         if control_select == 'h':
+            print("-----------------------\n")
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
+            print("-----------------------\n")
             print('You have ' + colored('10', 'yellow') + ' attempts ' +
                   'to guess the ENIGMA code\n')
             print('The ENIGMA code is ' + colored('4 ', 'yellow') +
                   'random numbers between 1-6')
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
                   'digits, and ' + 'you can only use the same digit once!')
-            print('All digits in the code must be between 1 and 6')
-            print("The guess format works in two ways: '1234' or '1 2 3 4'")
-            print('----------')
+            print('\nAll digits in the code must be between 1 and 6')
+            print("\nThe guess format works in two ways: '1234' or '1 2 3 4'")
+            print("-----------------------")
             print('\nAfter each guess, you will get ' +
                   'four responses in random order:\n')
-            print("GREEN: One of your numbers is correct " +
-                  "& it's in the correct location!")
-            print("YELLOW: One of your numbers is correct, " +
-                  "but it's not in the correct location!")
-            print('RED: One of your numbers is not in the ENIGMA code')
-            print('----------')
+            print(colored("GREEN: ", "green") +
+                  "One of your numbers is correct " +
+                  "& it's in the correct location!\n")
+            print(colored("YELLOW: ", "yellow") +
+                  "One of your numbers is correct, " +
+                  "but it's not in the correct location!\n")
+            print(colored('RED: ', 'red') +
+                  'One of your numbers is not in the ENIGMA code')
+            print("-----------------------")
             print(colored("\nLet's Get Cracking!\n", 'green'))
 
         elif control_select == "p":
             print(colored("\nLet's Get Cracking!\n", 'green'))
 
         else:
-            print(colored('Sorry, that is not a valid entry\n', 'red'))
+            print(colored('Sorry, that is not a valid entry only ' +
+                          'H or P accepted\n', 'red'))
             self.game_control()

@@ -1,8 +1,14 @@
-""" ENIGMA Game import packages to add to program """
+""" Main Game Code """
 # import os to help clear terminal
 import os
 
-# import random module
+# import sys for type style
+import sys
+
+# import sleep to enable a delay
+from time import sleep
+
+# import random to create the random secret code
 import random
 
 # import termcolor for adding colour to text
@@ -15,34 +21,99 @@ from pyfiglet import Figlet
 from player import Player
 
 
-def clear_game():
+def create_comp_list():
     """
-    Clear screen to enable new game play
+    Create the secret random code
     """
-    os.system("clear")
+    nums = [i+1 for i in range(6)]
+    num_list = []
+
+    for i in range(4):
+        choice = random.choice(nums)
+        while choice in num_list:
+            choice = random.choice(nums)
+        num_list.append(choice)
+
+    return num_list
 
 
-def secret_code(max_range):
-    """ Generate random 4 number code """
-    secret_code = []
-    for _ in range(4):
-        secret_code.append(random.randint(1, max_range))
-    return secret_code
-
-
-enigma_code = secret_code(10)
-print(enigma_code)
-heading = Figlet(font='banner3-D')
-print(colored(heading.renderText('ENIGMA'), 'red'))
-
-
-def welcome():
+def get_guess():
     """
-    ENIGMA Title & welcome message
+    Get the user's guess, check for errors
     """
-    sub_heading = Figlet(font='digital')
-    print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
-    print("Guess all 4 numbers to crack the ENIGMA code!\n")
+    while True:
+        num_issue = False
+        unique_issue = False
+        len_issue = False
+        value_issue = False
+        # defaults ^
+
+        guess = input("Enter your guess (4 unique numbers between 1 and 6): ")
+        for number in guess:
+            try:
+                if int(number) < 1 or int(number) > 6:
+                    num_issue = True
+            except ValueError:
+                value_issue = True
+        if value_issue:
+
+            guess = guess.split()
+            guess_text = ""
+            for i in range(4):
+                guess[i] = int(guess[i])
+                guess_text += str(guess[i])
+
+        if num_issue:
+            print(colored("\nYou can only use numbers " +
+                          "1-6 as guesses!\n", "red"))
+        else:
+            for number in guess:
+                if guess.count(number) > 1:
+                    unique_issue = True
+            if unique_issue:
+                print(colored("\nYou can only use each number once!\n", "red"))
+            else:
+                if len(guess) != 4:
+                    len_issue = True
+                if len_issue:
+                    print(colored("\nYour guess must consist " +
+                                  "of 4 numbers!\n", "red"))
+                else:
+                    guess_list = list(guess)
+                    for i in range(4):
+                        guess_list[i] = int(guess_list[i])
+                    return guess_list
+
+
+def check_values(comp, user):
+    """
+    Check the players guess values
+    """
+    return_list = []
+    for i in range(4):
+        if user[i] in comp:
+            if user[i] != comp[i]:
+                return_list.append("YELLOW")
+            else:
+                return_list.append("GREEN")
+        else:
+            return_list.append("RED")
+    random.shuffle(return_list)
+    print(return_list)
+    return check_win(return_list)
+
+
+def check_win(response_list):
+    """
+    Check if player guesess match and output win message
+    """
+    if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
+        win_message = Figlet(font='banner3-D')
+        print("\n-----------------\n")
+        print(colored(win_message.renderText('YOU WON'), 'green'))
+        print("-----------------\n")
+        start_new_game()
+        return True
 
 
 def main():
@@ -57,56 +128,65 @@ def main():
     player.get_player_name()
     player.game_control()
 
-    # Variable to store the correct guesses and attempts
-    correct = 0
-    attempts = 0
-
-    # Variables to store the players guesses
-    while correct < 4:
-        attempt1 = int(input('Please guess the 1st number: '))
-        attempt2 = int(input('Please guess the 2nd number: '))
-        attempt3 = int(input('Please guess the 3rd number: '))
-        attempt4 = int(input('Please guess the 4th number: '))
-        attempts += 1
-
-        player_guesses = (str(attempt1) + ' ' + str(attempt2) + ' ' +
-                          str(attempt3) + ' ' + str(attempt4))
-
-        if attempt1 == enigma_code[0]:
-            correct += 1
-        if attempt2 == enigma_code[1]:
-            correct += 1
-        if attempt3 == enigma_code[2]:
-            correct += 1
-        if attempt4 == enigma_code[3]:
-            correct += 1
-
-        if correct < 4 and correct > 1:
-            print(colored('\nTry again you cracked ' +
-                  str(correct) + ' numbers correctly\n', 'red'))
-            print('You guessed ' + str(player_guesses) + ' \n')
-            correct = 0
-            continue
-        elif correct == 1:
-            print(colored("\nLet's Get Cracking!\n", 'green'))
-            print(colored('\nTry again you cracked ' +
-                  str(correct) + ' number correctly\n', 'red'))
-            print('You guessed ' + str(player_guesses) + ' \n')
-            correct = 0
-            continue
+    attempts = 10
+    computer_list = create_comp_list()
+    while True:
+        if check_values(computer_list, get_guess()) is True:
+            break
         else:
-            if correct > 1:
-                win_heading = Figlet(font='banner3-D')
-                print(colored(win_heading.renderText('\nYOU WON'), 'green'))
-                print('\nCongratulations you cracked the Enigma code!!' +
-                      ' You did it in ' + str(attempts) + ' tries.\n')
-                print('The Enigma Code is ' + str(player_guesses) + ' \n')
-            elif correct == 1:
-                win_heading = Figlet(font='banner3-D')
-                print(colored(win_heading.renderText('\nYOU WON'), 'green'))
-                print('\nCongratulations you cracked the Enigma code!!' +
-                      ' You did it in ' + str(attempts) + ' try.\n')
-                print('The Enigma Code is ' + str(player_guesses) + ' \n')
+            attempts -= 1
+            print("\nattempts left", attempts)
+            print("----------\n")
+            if attempts == 0:
+                lose_message = Figlet(font='banner3-D')
+                print(colored(lose_message.renderText('YOU LOSE'), 'red'))
+                print("\nYou are out of attempts! " +
+                      colored("GAME OVER.", "red"))
+                player_list = ""
+                for i in range(4):
+                    player_list += str(computer_list[i])
+                print("\nThe " + colored("ENIGMA ", "red") +
+                      "code was: " + player_list)
+                start_new_game()
+
+                break
+
+
+def start_new_game():
+    """
+    Reset score & code, start new game
+    """
+    start_select = input(
+        '\nTo play again, type ' +
+        colored('Y ', 'green') + 'otherwise enter ' +
+        colored('N ', 'red') + 'to exit game:\n').lower()
+    if start_select == 'y':
+        os.system("clear")
+        main()
+
+    elif start_select == 'n':
+        os.system("clear")
+        exit()
+
+    else:
+        print(colored('\nSorry, that is not a valid entry\n', 'red'))
+        start_new_game()
+
+
+def welcome():
+    """
+    ENIGMA Title & welcome message
+    """
+    heading = Figlet(font='banner3-D')
+    print(colored(heading.renderText('ENIGMA'), 'red'))
+
+    sub_heading = Figlet(font='digital')
+    print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
+    welcome_text = "Guess all 4 numbers to crack the ENIGMA code!\n"
+    for char in welcome_text:
+        sleep(0.1)
+        sys.stdout.write(char)
+        sys.stdout.flush()
 
 
 if __name__ == '__main__':

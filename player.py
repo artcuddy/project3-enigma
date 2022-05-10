@@ -1,4 +1,7 @@
 """ Player Class sets up player object """
+# import re to search blank spaces in username
+import re
+
 # import termcolor for adding colour to text
 from termcolor import colored
 
@@ -33,7 +36,7 @@ class Player:
         # or if only numbers entered return error
         # otherwise accept all characters for codename
         try:
-            if len(username) == 0:
+            if not username or re.search("^\s*$", username):
                 raise ValueError(colored('Input cannot be empty', 'red'))
             elif username.isdigit():
                 raise ValueError(colored('Input cannot be ' +
@@ -61,10 +64,10 @@ class Player:
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
             print('You have ' + colored('10', 'yellow') + ' attempts ' +
                   'to guess the ENIGMA code\n')
-            print('The ENIGMA code is 4 random numbers between 1-9')
+            print('The ENIGMA code is 4 random numbers between 1-6')
             print('\nYour guess must be 4 digits, and ' +
                   'you can only use the same digit once!')
-            print('All digits in the code must be between 1 and 9')
+            print('All digits in the code must be between 1 and 6')
             print("The guess format works in two ways: '1234' or '1 2 3 4'")
             print('----------')
             print('\nAfter each guess, you will get ' +

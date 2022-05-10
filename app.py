@@ -1,4 +1,7 @@
 """ Main Game Code """
+# import os to help clear terminal
+import os
+
 # import random to create the random secret code
 import random
 
@@ -16,7 +19,7 @@ def create_comp_list():
     """
     Create the secret random code
     """
-    nums = [i+1 for i in range(7)]
+    nums = [i+1 for i in range(6)]
     num_list = []
 
     for i in range(4):
@@ -39,10 +42,10 @@ def get_guess():
         value_issue = False
         # defaults ^
 
-        guess = input("Enter your guess (4 unique numbers between 1 and 9): ")
+        guess = input("Enter your guess (4 unique numbers between 1 and 6): ")
         for number in guess:
             try:
-                if int(number) < 1 or int(number) > 9:
+                if int(number) < 1 or int(number) > 6:
                     num_issue = True
             except ValueError:
                 value_issue = True
@@ -55,7 +58,7 @@ def get_guess():
                 guess_text += str(guess[i])
 
         if num_issue:
-            print("You can only use numbers 1-9 as guesses!")
+            print("You can only use numbers 1-6 as guesses!")
         else:
             for number in guess:
                 if guess.count(number) > 1:
@@ -99,7 +102,6 @@ def check_win(response_list):
     if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
         win_message = Figlet(font='banner3-D')
         print(colored(win_message.renderText('\nYOU WON'), 'green'))
-        print("\nThe ENIGMA code was: " + player_list)
         start_new_game()
         return True
 
@@ -142,12 +144,21 @@ def start_new_game():
     """
     Reset score & code, start new game
     """
-    play_again = input('\nTo play again, type yes ' +
-                       'or no and hit enter: ')
-    if play_again == 'yes':
+    start_select = input(
+        '\nTo play again, type ' +
+        colored('y ', 'green') + 'otherwise enter ' +
+        colored('n ', 'red') + 'to exit game:\n').lower()
+    if start_select == 'y':
+        os.system("clear")
         main()
-    else:
+
+    elif start_select == 'n':
+        os.system("clear")
         exit()
+
+    else:
+        print(colored('\nSorry, that is not a valid entry\n', 'red'))
+        start_new_game()
 
 
 def welcome():

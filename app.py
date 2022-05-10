@@ -98,7 +98,7 @@ def check_values(comp, user):
                 return_list.append("GREEN")
         else:
             return_list.append("RED")
-    random.shuffle(return_list)
+    # random.shuffle(return_list)
     print(return_list)
     return check_win(return_list)
 
@@ -109,7 +109,9 @@ def check_win(response_list):
     """
     if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
         win_message = Figlet(font='banner3-D')
+        print("\n-----------------\n")
         print(colored(win_message.renderText('YOU WON'), 'green'))
+        print("-----------------\n")
         start_new_game()
         return True
 

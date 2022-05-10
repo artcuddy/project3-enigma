@@ -2,6 +2,12 @@
 # import os to help clear terminal
 import os
 
+# import sys for type style
+import sys
+
+# import sleep to enable a delay
+from time import sleep
+
 # import random to create the random secret code
 import random
 
@@ -58,18 +64,20 @@ def get_guess():
                 guess_text += str(guess[i])
 
         if num_issue:
-            print("You can only use numbers 1-6 as guesses!")
+            print(colored("\nYou can only use numbers " +
+                          "1-6 as guesses!\n", "red"))
         else:
             for number in guess:
                 if guess.count(number) > 1:
                     unique_issue = True
             if unique_issue:
-                print("You can only use each number once!")
+                print(colored("\nYou can only use each number once!\n", "red"))
             else:
                 if len(guess) != 4:
                     len_issue = True
                 if len_issue:
-                    print("Your guess must consist of 4 numbers!")
+                    print(colored("\nYour guess must consist " +
+                                  "of 4 numbers!\n", "red"))
                 else:
                     guess_list = list(guess)
                     for i in range(4):
@@ -97,11 +105,11 @@ def check_values(comp, user):
 
 def check_win(response_list):
     """
-    Check if player has won
+    Check if player guesess match and output win message
     """
     if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
         win_message = Figlet(font='banner3-D')
-        print(colored(win_message.renderText('\nYOU WON'), 'green'))
+        print(colored(win_message.renderText('YOU WON'), 'green'))
         start_new_game()
         return True
 
@@ -130,11 +138,13 @@ def main():
             if attempts == 0:
                 lose_message = Figlet(font='banner3-D')
                 print(colored(lose_message.renderText('YOU LOSE'), 'red'))
-                print("You are out of attempts! GAME OVER.")
+                print("\nYou are out of attempts! " +
+                      colored("GAME OVER.", "red"))
                 player_list = ""
                 for i in range(4):
                     player_list += str(computer_list[i])
-                print("\nThe ENIGMA code was: " + player_list)
+                print("\nThe " + colored("ENIGMA ", "red") +
+                      "code was: " + player_list)
                 start_new_game()
 
                 break
@@ -146,8 +156,8 @@ def start_new_game():
     """
     start_select = input(
         '\nTo play again, type ' +
-        colored('y ', 'green') + 'otherwise enter ' +
-        colored('n ', 'red') + 'to exit game:\n').lower()
+        colored('Y ', 'green') + 'otherwise enter ' +
+        colored('N ', 'red') + 'to exit game:\n').lower()
     if start_select == 'y':
         os.system("clear")
         main()
@@ -170,7 +180,11 @@ def welcome():
 
     sub_heading = Figlet(font='digital')
     print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
-    print("Guess all 4 numbers to crack the ENIGMA code!\n")
+    welcome_text = "Guess all 4 numbers to crack the ENIGMA code!\n"
+    for char in welcome_text:
+        sleep(0.1)
+        sys.stdout.write(char)
+        sys.stdout.flush()
 
 
 if __name__ == '__main__':

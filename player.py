@@ -2,6 +2,12 @@
 # import re to search blank spaces in username
 import re
 
+# import sys for type style
+import sys
+
+# import sleep to enable a delay
+from time import sleep
+
 # import termcolor for adding colour to text
 from termcolor import colored
 
@@ -19,13 +25,21 @@ class Player:
         Get username input from player
         """
         while True:
-            username_data = input("Enter your name here to start play:\n")
+            username_data = input("\nEnter your name here to start play:\n")
 
             if self.validate_data(username_data):
                 print(colored('\nWelcome ' +
                               f'{username_data.upper()}\n', 'green'))
-                print('Can you crack the' + (colored(' ENIGMA ', 'red')
-                      + 'code in 10 or less guesses!\n'))
+                inten_or_less_text = ('Can you crack the' +
+                                      (colored(' ENIGMA ', 'red') +
+                                       'code in 10 or less guesses!'))
+                for char in inten_or_less_text:
+                    sleep(0.1)
+                    sys.stdout.write(char)
+                    sys.stdout.flush()
+
+                print("\n-----------------\n")
+
                 break
 
     def validate_data(self, username):
@@ -36,10 +50,11 @@ class Player:
         # or if only numbers entered return error
         # otherwise accept all characters for codename
         try:
-            if not username or re.search("^\s*$", username):
-                raise ValueError(colored('Input cannot be empty', 'red'))
+            if not username or re.search(r"^\s*$", username):
+                raise ValueError(colored('Sorry username ' +
+                                         'cannot be empty', 'red'))
             elif username.isdigit():
-                raise ValueError(colored('Input cannot be ' +
+                raise ValueError(colored('Sorry username cannot be ' +
                                          'just a number', 'red'))
 
         except ValueError as error:
@@ -54,7 +69,7 @@ class Player:
         or intructions
         """
         control_select = input(
-            'To see game help enter ' +
+            '\nTo see game help enter ' +
             colored('H ', 'red') +
             'otherwise enter ' +
             colored('P ', 'green') +
@@ -64,9 +79,10 @@ class Player:
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
             print('You have ' + colored('10', 'yellow') + ' attempts ' +
                   'to guess the ENIGMA code\n')
-            print('The ENIGMA code is 4 random numbers between 1-6')
-            print('\nYour guess must be 4 digits, and ' +
-                  'you can only use the same digit once!')
+            print('The ENIGMA code is ' + colored('4 ', 'yellow') +
+                  'random numbers between 1-6')
+            print('\nYour guess must be ' + colored('4 ', 'yellow') +
+                  'digits, and ' + 'you can only use the same digit once!')
             print('All digits in the code must be between 1 and 6')
             print("The guess format works in two ways: '1234' or '1 2 3 4'")
             print('----------')

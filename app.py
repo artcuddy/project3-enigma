@@ -98,7 +98,7 @@ def check_values(comp, user):
                 return_list.append("GREEN")
         else:
             return_list.append("RED")
-    # random.shuffle(return_list)
+    random.shuffle(return_list)
     print(return_list)
     return check_win(return_list)
 

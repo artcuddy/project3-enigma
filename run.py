@@ -85,14 +85,14 @@ def get_guess():
                     return guess_list
 
 
-def check_values(comp, user):
+def check_values(code, user_guess):
     """
     Check the players guess values
     """
     return_list = []
     for i in range(4):
-        if user[i] in comp:
-            if user[i] != comp[i]:
+        if user_guess[i] in code:
+            if user_guess[i] != code[i]:
                 return_list.append("YELLOW")
             else:
                 return_list.append("GREEN")
@@ -182,7 +182,9 @@ def welcome():
 
     sub_heading = Figlet(font='digital')
     print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
-    welcome_text = "Guess all 4 numbers to crack the ENIGMA code!\n"
+    welcome_text = ('Guess all 4 numbers to crack' +
+                    (colored(' ENIGMA ', 'red') +
+                     'code!\n'))
     for char in welcome_text:
         sleep(0.1)
         sys.stdout.write(char)

@@ -80,8 +80,9 @@ class Player:
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
             print("-----------------------\n")
             print('You have ' + colored('10', 'yellow') + ' attempts ' +
-                  'to guess the ENIGMA code\n')
-            print('The ENIGMA code is ' + colored('4 ', 'yellow') +
+                  'to guess the ' + colored('ENIGMA ', 'red') + 'code\n')
+            print('The ' + colored('ENIGMA ', 'red') + 'code is ' +
+                  colored('4 ', 'yellow') +
                   'random numbers between 1-6')
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
                   'digits, and ' + 'you can only use the same digit once!')
@@ -97,7 +98,8 @@ class Player:
                   "One of your numbers is correct, " +
                   "but it's not in the correct location!\n")
             print(colored('RED: ', 'red') +
-                  'One of your numbers is not in the ENIGMA code')
+                  'One of your numbers is not in the ' +
+                  colored('ENIGMA ', 'red') + ' code')
             print("-----------------------")
             print(colored("\nLet's Get Cracking!\n", 'green'))
 

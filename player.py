@@ -30,10 +30,10 @@ class Player:
             if self.validate_data(username_data):
                 print(colored('\nWelcome ' +
                               f'{username_data.upper()}\n', 'green'))
-                inten_or_less_text = ('Can you crack the' +
-                                      (colored(' ENIGMA ', 'red') +
-                                       'code in 10 or less guesses!'))
-                for char in inten_or_less_text:
+                in_ten_or_less_text = ('Can you crack the' +
+                                       (colored(' ENIGMA ', 'red') +
+                                        'code in 10 or less guesses!'))
+                for char in in_ten_or_less_text:
                     sleep(0.1)
                     sys.stdout.write(char)
                     sys.stdout.flush()

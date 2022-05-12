@@ -48,7 +48,7 @@ def main():
             break
         else:
             attempts -= 1
-            print("\nattempts left", attempts)
+            print("\nAttempts left", attempts)
             print("----------\n")
             if attempts == 0:
                 lose_message = Figlet(font='banner3-D')
@@ -144,21 +144,32 @@ class Codegen:
                             guess_list[i] = int(guess_list[i])
                         return guess_list
 
-    def check_values(self, comp, user):
+    def check_values(self, enigma, user):
         """
         Check the players guess values against the ENIGMA code
         """
-        return_list = []
+        return_list_green = []
+        return_list_yellow = []
+        return_list_red = []
         for i in range(4):
-            if user[i] in comp:
-                if user[i] != comp[i]:
-                    return_list.append("YELLOW")
-                else:
-                    return_list.append("GREEN")
+            if user[i] in enigma:
+                if user[i] != enigma[i]:
+                    return_list_yellow.append(colored("YELLOW", "yellow"))
+
+        for i in range(4):
+            if user[i] in enigma:
+                if user[i] == enigma[i]:
+                    return_list_green.append(colored("GREEN", "green"))
             else:
-                return_list.append("RED")
-        random.shuffle(return_list)
-        print(return_list)
+                return_list_red.append(colored("RED", "red"))
+
+        # join both lists for printing colour with colorama
+        return_list = (
+            ' '.join(str(item) for item in return_list_green)) + (" ") + (
+                ' '.join(str(item) for item in return_list_yellow)) + (" ") + (
+                ' '.join(str(item) for item in return_list_red))
+
+        print("\nENIGMA Hint: " + return_list)
         return self.check_win(return_list)
 
     def check_win(self, response_list):

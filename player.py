@@ -1,4 +1,7 @@
 """ Player Class sets up player object """
+# import os to help clear terminal
+import os
+
 # import re to search blank spaces in username
 import re
 
@@ -7,6 +10,9 @@ import sys
 
 # import sleep to enable a delay
 from time import sleep
+
+# import pyfiglet for ascii art
+from pyfiglet import Figlet
 
 # import termcolor for adding colour to text
 from termcolor import colored
@@ -99,12 +105,48 @@ class Player:
                   "but it's not in the correct location!\n")
             print(colored('RED: ', 'red') +
                   'One of your numbers is not in the ' +
-                  colored('ENIGMA ', 'red') + ' code')
+                  colored('ENIGMA ', 'red') + 'code')
             print("-----------------------")
-            print(colored("\nLet's Get Cracking!\n", 'green'))
+            control_select = input(
+                '\nTo Play game enter ' +
+                colored('P ', 'green') +
+                'otherwise enter ' +
+                colored('X ', 'red') +
+                'to Exit game:\n').lower()
+
+            if control_select == "p":
+                os.system("clear")
+                heading = Figlet(font='banner3-D')
+                print(colored(heading.renderText('ENIGMA'), 'red'))
+                getcracking_text = (colored("\nLet's Get " +
+                                            "Cracking!\n", "green"))
+                for char in getcracking_text:
+                    sleep(0.1)
+                    sys.stdout.write(char)
+                    sys.stdout.flush()
+            elif control_select == 'x':
+                print('Sorry to see you go come back antother time!!!')
+                exit()
+            else:
+                print(colored('Sorry, that is not a valid ' +
+                              'entry only\n', 'red'))
+                self.game_control()
+
+            # getcracking_text = (colored("\nLet's Get Cracking!\n", "green"))
+            # for char in getcracking_text:
+            #     sleep(0.1)
+            #     sys.stdout.write(char)
+            #     sys.stdout.flush()
 
         elif control_select == "p":
-            print(colored("\nLet's Get Cracking!\n", 'green'))
+            os.system("clear")
+            heading = Figlet(font='banner3-D')
+            print(colored(heading.renderText('ENIGMA'), 'red'))
+            getcracking_text = (colored("\nLet's Get Cracking!\n", "green"))
+            for char in getcracking_text:
+                sleep(0.1)
+                sys.stdout.write(char)
+                sys.stdout.flush()
 
         else:
             print(colored('Sorry, that is not a valid entry only ' +

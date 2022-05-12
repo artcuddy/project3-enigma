@@ -2,6 +2,9 @@
 # import os to help clear terminal
 import os
 
+# import re to search blank spaces in username
+import re
+
 # import random to create the random secret code
 import random
 
@@ -23,7 +26,7 @@ from player import Player
 
 def main():
     """
-    Run all program functions and methods
+    Run all program functions and methods to load
     """
     welcome()
 
@@ -93,27 +96,35 @@ class Codegen:
             unique_issue = False
             len_issue = False
             value_issue = False
+            blank_issue = False
             # defaults ^
 
             guess = input("Enter your guess (4 unique numbers " +
                           "between 1 and 6): ")
+
             for number in guess:
                 try:
                     if int(number) < 1 or int(number) > 6:
                         num_issue = True
                 except ValueError:
                     value_issue = True
-            if value_issue:
+            if not guess or re.search(r"^\s*$", guess):
+                blank_issue = True
 
+            if value_issue:
                 guess = guess.split()
                 guess_text = ""
-                for i in range(4):
+                for i in guess:
                     guess[i] = int(guess[i])
                     guess_text += str(guess[i])
+
+            if blank_issue:
+                print(colored("\nYou cannot submit a blank guess\n", "red"))
 
             if num_issue:
                 print(colored("\nYou can only use numbers " +
                               "1-6 as guesses!\n", "red"))
+
             else:
                 for number in guess:
                     if guess.count(number) > 1:
@@ -135,7 +146,7 @@ class Codegen:
 
     def check_values(self, comp, user):
         """
-        Check the players guess values
+        Check the players guess values against the ENIGMA code
         """
         return_list = []
         for i in range(4):
@@ -161,25 +172,6 @@ class Codegen:
             print("-----------------\n")
             start_new_game()
             return True
-
-    @staticmethod
-    def welcome():
-        """
-        ENIGMA Title & welcome message
-        """
-        heading = Figlet(font='banner3-D')
-        print(colored(heading.renderText('ENIGMA'), 'red'))
-
-        sub_heading = Figlet(font='digital')
-        print(colored(sub_heading.renderText('Can you ' +
-                      'crack the code'), 'green'))
-        welcome_text = ('Guess all 4 numbers to crack' +
-                        (colored(' ENIGMA ', 'red') +
-                         'code!\n'))
-        for char in welcome_text:
-            sleep(0.1)
-            sys.stdout.write(char)
-            sys.stdout.flush()
 
 
 def start_new_game():
@@ -211,7 +203,7 @@ def welcome():
 
     sub_heading = Figlet(font='digital')
     print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
-    welcome_text = ('Guess all 4 numbers to crack' +
+    welcome_text = ('Guess all 4 numbers to crack the' +
                     (colored(' ENIGMA ', 'red') +
                      'code!\n'))
     for char in welcome_text:

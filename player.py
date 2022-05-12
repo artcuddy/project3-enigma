@@ -118,7 +118,7 @@ class Player:
                 os.system("clear")
                 heading = Figlet(font='banner3-D')
                 print(colored(heading.renderText('ENIGMA'), 'red'))
-                getcracking_text = (colored("\nLet's Get " +
+                getcracking_text = (colored("Let's Get " +
                                             "Cracking!\n", "green"))
                 for char in getcracking_text:
                     sleep(0.1)
@@ -132,17 +132,11 @@ class Player:
                               'entry only\n', 'red'))
                 self.game_control()
 
-            # getcracking_text = (colored("\nLet's Get Cracking!\n", "green"))
-            # for char in getcracking_text:
-            #     sleep(0.1)
-            #     sys.stdout.write(char)
-            #     sys.stdout.flush()
-
         elif control_select == "p":
             os.system("clear")
             heading = Figlet(font='banner3-D')
             print(colored(heading.renderText('ENIGMA'), 'red'))
-            getcracking_text = (colored("\nLet's Get Cracking!\n", "green"))
+            getcracking_text = (colored("Let's Get Cracking!\n", "green"))
             for char in getcracking_text:
                 sleep(0.1)
                 sys.stdout.write(char)

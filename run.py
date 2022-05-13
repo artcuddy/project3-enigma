@@ -38,10 +38,7 @@ def main():
     player.get_player_name()
     player.game_control()
 
-    # calling the methods in the Codegen class
-    # code.create_comp_list()
-    # code.get_guess()
-
+    # keep track of the player attempts and check if player has won or lost
     attempts = 10
     computer_list = code.create_comp_list()
     while True:
@@ -52,6 +49,7 @@ def main():
             print("\nAttempts left", attempts)
             print("----------\n")
             if attempts == 0:
+                # output loser message is attempts reach 0
                 lose_message = Figlet(font='banner3-D')
                 print(colored(lose_message.renderText('YOU LOSE'), 'red'))
                 print("\nYou are out of attempts! " +
@@ -204,6 +202,8 @@ def start_new_game():
         main()
 
     elif start_select == 'n':
+        print(colored("\nSorry, that you don't want to play anymore\n", "green"))
+        print(colored("\nSee you next time!!!!\n", "green"))
         os.system("clear")
         exit()
 

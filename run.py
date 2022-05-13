@@ -39,7 +39,8 @@ def main():
     player.game_control()
 
     # calling the methods in the Codegen class
-    code.create_comp_list()
+    # code.create_comp_list()
+    # code.get_guess()
 
     attempts = 10
     computer_list = code.create_comp_list()
@@ -148,9 +149,11 @@ class Codegen:
         """
         Check the players guess values against the ENIGMA code
         """
+        return_list = []
         return_list_green = []
         return_list_yellow = []
         return_list_red = []
+
         for i in range(4):
             if user[i] in enigma:
                 if user[i] != enigma[i]:
@@ -163,10 +166,10 @@ class Codegen:
             else:
                 return_list_red.append(colored("RED", "red"))
 
-        # join both lists for printing colour with colorama
+        # join both lists for printing colour hints with termcolor
         return_list = (
-            ' '.join(str(item) for item in return_list_green)) + (" ") + (
-                ' '.join(str(item) for item in return_list_yellow)) + (" ") + (
+            ' '.join(str(item) for item in return_list_green)) + (' ') + (
+                ' '.join(str(item) for item in return_list_yellow)) + (' ') + (
                 ' '.join(str(item) for item in return_list_red))
 
         print("\nENIGMA Hint: " + return_list)
@@ -176,7 +179,10 @@ class Codegen:
         """
         Check if player guesess match and output win message
         """
-        if response_list == ["GREEN", "GREEN", "GREEN", "GREEN"]:
+        if response_list.split() == ['\x1b[32mGREEN\x1b[0m',
+                                     '\x1b[32mGREEN\x1b[0m',
+                                     '\x1b[32mGREEN\x1b[0m',
+                                     '\x1b[32mGREEN\x1b[0m']:
             win_message = Figlet(font='banner3-D')
             print("\n-----------------\n")
             print(colored(win_message.renderText('YOU WON'), 'green'))

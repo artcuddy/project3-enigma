@@ -192,10 +192,9 @@ def start_new_game():
         main()
 
     elif start_select == 'n':
-        print(colored("\nSorry, that you don't want " +
-                      "to play anymore\n", "green"))
-        print(colored("\nSee you next time!!!!\n", "green"))
         os.system("clear")
+        print(colored("\nThanks for playing. " +
+                      "See you next time!!!!\n", "green"))
         exit()
 
     else:

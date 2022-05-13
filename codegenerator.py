@@ -1,15 +1,6 @@
-""" Main Game Code """
-# import os to help clear terminal
-import os
-
+""" Codegen Class sets up Codgen object to generate the ENIGMA code """
 # import random to create the random secret code
 import random
-
-# import sys for type style
-import sys
-
-# import sleep to enable a delay
-from time import sleep
 
 # import termcolor for adding colour to text
 from termcolor import colored
@@ -17,88 +8,10 @@ from termcolor import colored
 # import pyfiglet for ascii art
 from pyfiglet import Figlet
 
-# import player class
-from player import Player
+# import newgame class
+from game import Newgame
 
-
-def main():
-    """
-    Run all program functions and methods to load
-    """
-    welcome()
-
-    player = Player()
-
-    code = Codegen()
-
-    # calling the methods in the Player class
-    player.get_player_name()
-    player.game_control()
-
-    # keep track of the player attempts and check if player has won or lost
-    attempts = 10
-    computer_list = code.create_comp_list()
-    while True:
-        if code.check_values(computer_list, code.get_guess()) is True:
-            break
-        else:
-            attempts -= 1
-            print("\nAttempts left", attempts)
-            print("----------\n")
-            if attempts == 0:
-                # output lose message if attempts reach 0
-                lose_message = Figlet(font='banner3-D')
-                print(colored(lose_message.renderText('YOU LOSE'), 'red'))
-                print("\nYou are out of attempts! " +
-                      colored("GAME OVER.", "red"))
-                player_list = ""
-                for i in range(4):
-                    player_list += str(computer_list[i])
-                print("\nThe " + colored("ENIGMA ", "red") +
-                      "code was: " + player_list)
-                start_new_game()
-
-                break
-
-
-def start_new_game():
-    """
-    Reset score & code, start new game
-    """
-    start_select = input(
-        '\nTo play again, type ' +
-        colored('Y ', 'green') + 'otherwise enter ' +
-        colored('N ', 'red') + 'to exit game:\n').lower()
-    if start_select == 'y':
-        os.system("clear")
-        main()
-
-    elif start_select == 'n':
-        os.system("clear")
-        print(colored("\nThanks for playing. " +
-                      "See you next time!!!!\n", "green"))
-        exit()
-
-    else:
-        print(colored('\nSorry, that is not a valid entry\n', 'red'))
-
-
-def welcome():
-    """
-    ENIGMA Title & welcome message
-    """
-    heading = Figlet(font='banner3-D')
-    print(colored(heading.renderText('ENIGMA'), 'red'))
-
-    sub_heading = Figlet(font='digital')
-    print(colored(sub_heading.renderText('Can you crack the code'), 'green'))
-    welcome_text = ('Guess all 4 numbers to crack the' +
-                    (colored(' ENIGMA ', 'red') +
-                     'code!\n'))
-    for char in welcome_text:
-        sleep(0.1)
-        sys.stdout.write(char)
-        sys.stdout.flush()
+newgame = Newgame()
 
 
 class Codegen:
@@ -215,9 +128,5 @@ class Codegen:
             print("\n-----------------\n")
             print(colored(win_message.renderText('YOU WON'), 'green'))
             print("-----------------\n")
-            start_new_game()
+            newgame.start_new_game()
             return True
-
-
-if __name__ == '__main__':
-    main()

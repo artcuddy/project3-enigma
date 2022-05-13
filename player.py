@@ -80,7 +80,7 @@ class Player:
             'otherwise enter ' +
             colored('P ', 'green') +
             'to Play game:\n').lower()
-
+        # Show help screen if h entered
         if control_select == 'h':
             print("-----------------------\n")
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
@@ -91,8 +91,8 @@ class Player:
                   colored('4 ', 'yellow') +
                   'random numbers between 1-6')
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
-                  'digits, and ' + 'you can only use the same digit once!')
-            print('\nAll digits in the code must be between 1 and 6')
+                  'numbers, and ' + 'you can only use the same number once!')
+            print('\nAll numbers in the code must be between 1 and 6')
             print("\nThe guess format works in two ways: '1234' or '1 2 3 4'")
             print("-----------------------")
             print('\nAfter each guess, you will get ' +
@@ -106,6 +106,8 @@ class Player:
             print(colored('RED: ', 'red') +
                   'One of your numbers is not in the ' +
                   colored('ENIGMA ', 'red') + 'code')
+            print(colored('\nMatch all 4 numbers to crack the ', 'green') +
+                  colored('ENIGMA ', 'red') + colored('code\n', 'green'))
             print("-----------------------")
             control_select = input(
                 '\nTo Play game enter ' +
@@ -113,7 +115,7 @@ class Player:
                 'otherwise enter ' +
                 colored('X ', 'red') +
                 'to Exit game:\n').lower()
-
+            # Start game if p is entered
             if control_select == "p":
                 os.system("clear")
                 heading = Figlet(font='banner3-D')
@@ -124,8 +126,12 @@ class Player:
                     sleep(0.1)
                     sys.stdout.write(char)
                     sys.stdout.flush()
+            # Exit game if x is entered
             elif control_select == 'x':
-                print('Sorry to see you go come back antother time!!!')
+                print(colored("\nSorry, that you don't want " +
+                              "to play anymore\n", "green"))
+                print(colored("\nSee you next time!!!!\n", "green"))
+                os.system("clear")
                 exit()
             else:
                 print(colored('Sorry, that is not a valid ' +

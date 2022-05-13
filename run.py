@@ -2,9 +2,6 @@
 # import os to help clear terminal
 import os
 
-# import re to search blank spaces in username
-import re
-
 # import random to create the random secret code
 import random
 
@@ -91,12 +88,11 @@ class Codegen:
         Get the user's guess, check for errors
         """
         while True:
+            # issue default to catch errors in player guess
             num_issue = False
             unique_issue = False
             len_issue = False
             value_issue = False
-            blank_issue = False
-            # defaults ^
 
             guess = input("Enter your guess (4 unique numbers " +
                           "between 1 and 6): ")
@@ -105,22 +101,15 @@ class Codegen:
                 try:
                     if int(number) < 1 or int(number) > 6:
                         num_issue = True
+
                 except ValueError:
                     value_issue = True
-            if not guess or re.search(r"^\s*$", guess):
-                blank_issue = True
-
-            if value_issue:
-                guess = guess.split()
-                guess_text = ""
-                for i in guess:
-                    guess[i] = int(guess[i])
-                    guess_text += str(guess[i])
-
-            if blank_issue:
-                print(colored("\nYou cannot submit a blank guess\n", "red"))
 
             if num_issue:
+                print(colored("\nYou can only use numbers " +
+                              "1-6 as guesses!\n", "red"))
+
+            if value_issue:
                 print(colored("\nYou can only use numbers " +
                               "1-6 as guesses!\n", "red"))
 
@@ -177,6 +166,7 @@ class Codegen:
         """
         Check if player guesess match and output win message
         """
+        # code to validate player guess against ENIGMA code
         if response_list.split() == ['\x1b[32mGREEN\x1b[0m',
                                      '\x1b[32mGREEN\x1b[0m',
                                      '\x1b[32mGREEN\x1b[0m',
@@ -202,7 +192,8 @@ def start_new_game():
         main()
 
     elif start_select == 'n':
-        print(colored("\nSorry, that you don't want to play anymore\n", "green"))
+        print(colored("\nSorry, that you don't want " +
+                      "to play anymore\n", "green"))
         print(colored("\nSee you next time!!!!\n", "green"))
         os.system("clear")
         exit()

@@ -82,6 +82,7 @@ class Player:
             'to Play game:\n').lower()
         # Show help screen if h entered
         if control_select == 'h':
+            os.system("clear")
             print("-----------------------\n")
             print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
             print("-----------------------\n")
@@ -89,10 +90,10 @@ class Player:
                   'to guess the ' + colored('ENIGMA ', 'red') + 'code\n')
             print('The ' + colored('ENIGMA ', 'red') + 'code is ' +
                   colored('4 ', 'yellow') +
-                  'random numbers between 1-6')
+                  'random numbers between 1-9')
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
                   'numbers, and ' + 'you can only use the same number once!')
-            print('\nAll numbers in the code must be between 1 and 6')
+            print('\nAll numbers in the code must be between 1 and 9')
             print("\nThe guess format works in two ways: '1234' or '1 2 3 4'")
             print("-----------------------")
             print('\nAfter each guess, you will get ' +
@@ -118,7 +119,7 @@ class Player:
             # Start game if p is entered
             if control_select == "p":
                 os.system("clear")
-                heading = Figlet(font='banner3-D')
+                heading = Figlet(font='banner3-D', justify='center')
                 print(colored(heading.renderText('ENIGMA'), 'red'))
                 getcracking_text = (colored("Let's Get " +
                                             "Cracking!\n", "green"))
@@ -139,7 +140,7 @@ class Player:
 
         elif control_select == "p":
             os.system("clear")
-            heading = Figlet(font='banner3-D')
+            heading = Figlet(font='banner3-D', justify='center')
             print(colored(heading.renderText('ENIGMA'), 'red'))
             getcracking_text = (colored("Let's Get Cracking!\n", "green"))
             for char in getcracking_text:

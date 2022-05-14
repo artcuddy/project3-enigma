@@ -38,7 +38,7 @@ class Attempts:
                 print("----------\n")
                 if attempts == 0:
                     # output lose message if attempts reach 0
-                    lose_message = Figlet(font='banner3-D')
+                    lose_message = Figlet(font='banner3-D', justify="center")
                     print(colored(lose_message.renderText('YOU LOSE'), 'red'))
                     print("\nYou are out of attempts! " +
                           colored("GAME OVER.", "red"))

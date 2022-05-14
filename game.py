@@ -24,10 +24,10 @@ class Welcome:
         """
         ENIGMA Title & welcome message
         """
-        heading = Figlet(font='banner3-D')
+        heading = Figlet(font='banner3-D', justify="center")
         print(colored(heading.renderText('ENIGMA'), 'red'))
 
-        sub_heading = Figlet(font='digital')
+        sub_heading = Figlet(font='digital', justify="center")
         print(colored(sub_heading.renderText(
              'Can you crack the code'), 'green'))
         welcome_text = ('Guess all 4 numbers to crack the' +

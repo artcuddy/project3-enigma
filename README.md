@@ -1,5 +1,5 @@
 # **ENIGMA**
-<h1 id="top"><a href="https://gamelink.com">ENIGMA CODE BREAKER</a></h1>
+<h1 id="top"><a href="https://enigma-code-breaker.herokuapp.com/">ENIGMA CODE BREAKER</a></h1>
 
 ## Contents
 <ul>
@@ -39,8 +39,8 @@ ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 This game is losely based on the board game of [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)) from the 1970s.
 
 ### Demo
-A live version of the game can be found <a href="https://gamedemo.com/">**HERE**</a><br><br>
-<img src="assets/documents/readme-images/demo.gif"><br><br>
+A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/">**HERE**</a><br><br>
+<img src="assets/screenshots/enigma-welcome-screen.png"><br><br>
 <a href="#top">Back to the top.</a>
 
 

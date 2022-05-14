@@ -98,3 +98,5 @@ This game takes the users' stories mentioned above into consideration to create 
 
 * A message to the user to enter their name is seen first. This alerts the user on how to start playing the game.
 
+* Text is run over the screen to explain the first
+

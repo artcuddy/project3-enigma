@@ -98,6 +98,8 @@ This game takes the users' stories mentioned above into consideration to create 
 
 * Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!"
 
+**Username Input Section:**
+
 * A message to the user to enter their name is seen first. This alerts the user on how to start playing the game.
 
 <img src="assets/screenshots/enigma-name-screen.png"><br><br>
@@ -109,6 +111,8 @@ This game takes the users' stories mentioned above into consideration to create 
 * After the user enters a correct username this is returned in green with a welcome message
 
 <img src="assets/screenshots/enigma-name-screen.png"><br><br>
+
+**Game Help Section:**
 
 * The user is then presented with 2 options, view the help screen by entering H or play game by entering P
 
@@ -123,6 +127,8 @@ This game takes the users' stories mentioned above into consideration to create 
 * At the bottom of this screen there are 2 options, enter P to play the game or X to exit the help screen
 
 <img src="assets/screenshots/enigma-help-screen.png"><br><br>
+
+**Game Play Section:**
 
 * If P is entered the ENIGMA game will start with the initial player guess request printed to the terminal
 
@@ -160,6 +166,79 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 * Should the user select to exit the game a goodbye message is displayed and the game is quit
 
 <img src="assets/screenshots/goodbye-screen.png"><br><br>
+
+<a href="#top">Back to the top.</a>
+
+# Technologies
+
+Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
+
+### Languages
+<ol>
+    <li><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML</a>
+        <ul><li>The main structure of the website</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a>
+        <ul><li>For the design of the site</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+        <ul><li>Within the template supplied by code institute</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
+        <ul><li>For hosting a local server during for testing</li>
+        <li>For the gameplay logic</li></ul>
+    </li>
+    <li><a href="https://www.markdownguide.org/" target="_blank">Markdown</a>
+        <ul><li>For the content and structure of the README.md</li></ul>
+    </li>
+</ol>   
+
+### Version Control
+<ol>
+    <li><a href="https://github.com/" target="_blank">Git & Github</a>
+        <ul><li>For the hosting and version control of the game</li></ul>
+    </li>
+    <li><a href="https://www.gitpod.io/" target="_blank">Gitpod</a>
+        <ul><li>The development environment used for writing the code for the game</li></ul>
+    </li>
+</ol>
+
+
+### Applications    
+<ol>
+   <li><a href="https://lucid.app/" target="_blank">Lucid Chart</a>
+        <ul><li>For the creation of the flowchart</li></ul>
+    </li>
+    <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
+        <ul><li>For testing out ideas without interfering with code for website</li></ul>
+    </li>
+    <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
+        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and coding.</li></ul>
+    </li>
+</ol>
+    
+### Frameworks, Libraries and Programs
+<ol> 
+    <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
+        <ul>Used to delay the next line of text in the python terminal</ul>
+    </li>
+    <li><a href="https://pypi.org/project/termcolor/">Python termcolor library</a>
+        <ul>Used to add colour to the text in the python terminal</ul>
+    </li>
+    <li><a href="https://favicon.io/" target="_blank">Favicon.io</a>
+        <ul><li>Used to create the tab icon from an original PNG file</li></ul>
+    </li> 
+    <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
+        <ul><li>To test and search for errors in the Python code</li></ul>
+    </li>
+    <li><a href="https://wave.webaim.org/" target="_blank">WAVE Web Accessibility Evaluation Tool</a>
+        <ul><li>To ensure compliance with accessibility</li></ul>
+    </li>
+    <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
+        <ul><li>To ensure high performance and quick loading times of the website</li></ul>
+    </li>
+</ol><br>  
+<a href="#top">Back to the top.</a>
 
 
 

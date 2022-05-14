@@ -110,14 +110,14 @@ class Player:
             print(colored('\nMatch all 4 numbers to crack the ', 'green') +
                   colored('ENIGMA ', 'red') + colored('code\n', 'green'))
             print("-----------------------")
-            control_select = input(
+            help_select = input(
                 '\nTo Play game enter ' +
                 colored('P ', 'green') +
                 'otherwise enter ' +
                 colored('X ', 'red') +
-                'to Exit game:\n').lower()
+                'to Exit help:\n').lower()
             # Start game if p is entered
-            if control_select == "p":
+            if help_select == "p":
                 os.system("clear")
                 heading = Figlet(font='banner3-D', justify="center")
                 print(heading.renderText('ENIGMA'))
@@ -127,13 +127,10 @@ class Player:
                     sleep(0.1)
                     sys.stdout.write(char)
                     sys.stdout.flush()
-            # Exit game if x is entered
-            elif control_select == 'x':
+            # Exit help if x is entered
+            elif help_select == 'x':
                 os.system("clear")
-                bye_message = Figlet(font='digital', justify="center")
-                print(colored(bye_message.renderText(
-                 '\nGoodbye thanks for playing'), 'green'))
-                exit()
+                self.game_control()
             else:
                 print(colored('Sorry, that is not a valid ' +
                               'entry only\n', 'red'))

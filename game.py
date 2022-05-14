@@ -54,7 +54,7 @@ class Newgame:
             colored('N ', 'red') + 'to exit game:\n').lower()
         if start_select == 'y':
             os.system("clear")
-            # main()
+            os.system('python app.py')
 
         elif start_select == 'n':
             os.system("clear")

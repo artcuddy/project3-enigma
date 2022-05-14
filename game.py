@@ -61,8 +61,6 @@ class Newgame:
             bye_message = Figlet(font='digital', justify="center")
             print(colored(bye_message.renderText(
              '\nGoodbye thanks for playing'), 'green'))
-            # print(colored("\nGoodbye thanks for playing! " +
-            #               "See you next time!!!!\n", "green"))
             exit()
 
         else:

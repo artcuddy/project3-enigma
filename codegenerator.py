@@ -45,7 +45,6 @@ class Codegen:
             num_issue = False
             unique_issue = False
             len_issue = False
-            value_issue = False
 
             guess = input("Enter your guess (4 unique numbers " +
                           "between 1 and 8): ")
@@ -56,16 +55,11 @@ class Codegen:
                         num_issue = True
 
                 except ValueError:
-                    value_issue = True
+                    num_issue = True
 
             if num_issue:
                 print(colored("\nYou can only use numbers " +
                               "1-8 as guesses!\n", "red"))
-
-            if value_issue:
-                print(colored("\nYou can only use numbers " +
-                              "1-8 as guesses!\n", "red"))
-
             else:
                 for number in guess:
                     if guess.count(number) > 1:

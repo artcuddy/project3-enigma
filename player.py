@@ -38,7 +38,7 @@ class Player:
                               f'{playername.upper()}\n', 'green'))
                 in_ten_or_less_text = ('Can you crack the' +
                                        (colored(' ENIGMA ', 'red') +
-                                        'code in 10 or less guesses!'))
+                                        'code in 10 or less guesses???'))
                 for char in in_ten_or_less_text:
                     sleep(0.1)
                     sys.stdout.write(char)
@@ -133,8 +133,6 @@ class Player:
                 bye_message = Figlet(font='digital', justify="center")
                 print(colored(bye_message.renderText(
                  '\nGoodbye thanks for playing'), 'green'))
-                # print(colored("\nThanks for playing " +
-                #               "See you next time!!!!\n", "green"))
                 exit()
             else:
                 print(colored('Sorry, that is not a valid ' +

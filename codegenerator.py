@@ -111,7 +111,6 @@ class Codegen:
             ' '.join(str(item) for item in return_list_green)) + (' ') + (
                 ' '.join(str(item) for item in return_list_yellow)) + (' ') + (
                 ' '.join(str(item) for item in return_list_red))
-
         print("\nENIGMA Hint: " + return_list)
         return self.check_win(return_list)
 

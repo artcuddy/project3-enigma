@@ -33,7 +33,7 @@ class Attempts:
                 break
             else:
                 attempts -= 1
-                print("\nAttempts left", attempts)
+                print("\nAttempts left:", colored(attempts, 'red'))
                 print("----------\n")
                 if attempts == 0:
                     # output lose message if attempts reach 0

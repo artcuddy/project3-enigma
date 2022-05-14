@@ -90,10 +90,10 @@ class Player:
                   'to guess the ' + colored('ENIGMA ', 'red') + 'code\n')
             print('The ' + colored('ENIGMA ', 'red') + 'code is ' +
                   colored('4 ', 'yellow') +
-                  'random numbers between 1-9')
+                  'random numbers between 1-8')
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
                   'numbers, and ' + 'you can only use the same number once!')
-            print('\nAll numbers in the code must be between 1 and 9')
+            print('\nAll numbers in the code must be between 1 and 8')
             print("\nThe guess format works in two ways: '1234' or '1 2 3 4'")
             print("-----------------------")
             print('\nAfter each guess, you will get ' +

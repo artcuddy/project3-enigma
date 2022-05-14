@@ -24,7 +24,7 @@ class Codegen:
         """
         Create the secret random code
         """
-        nums = [i+1 for i in range(9)]
+        nums = [i+1 for i in range(8)]
         num_list = []
 
         for i in range(4):
@@ -48,11 +48,11 @@ class Codegen:
             value_issue = False
 
             guess = input("Enter your guess (4 unique numbers " +
-                          "between 1 and 9): ")
+                          "between 1 and 8): ")
 
             for number in guess:
                 try:
-                    if int(number) < 1 or int(number) > 9:
+                    if int(number) < 1 or int(number) > 8:
                         num_issue = True
 
                 except ValueError:
@@ -60,11 +60,11 @@ class Codegen:
 
             if num_issue:
                 print(colored("\nYou can only use numbers " +
-                              "1-9 as guesses!\n", "red"))
+                              "1-8 as guesses!\n", "red"))
 
             if value_issue:
                 print(colored("\nYou can only use numbers " +
-                              "1-9 as guesses!\n", "red"))
+                              "1-8 as guesses!\n", "red"))
 
             else:
                 for number in guess:

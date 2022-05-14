@@ -15,20 +15,20 @@
         <a href="#technologies"><strong>Technologies</strong></a>
     </li>
     <li>
-        <a href="#Testing"><strong>Testing</strong></a>   
+        <a href="#testing"><strong>Testing</strong></a>   
     </li>
     <li>
-        <a href="#Deployment"><strong>Deployment</strong></a>
+        <a href="#deployment"><strong>Deployment</strong></a>
     </li>
     <li>
-       <a href="#Credits"><strong>Credits</strong></a> 
+       <a href="#credits"><strong>Credits</strong></a> 
     </li>
     <li>
-        <a href="#References"><strong>References</strong></a>
+        <a href="#references"><strong>References</strong></a>
     </li>
 </ul>
 <hr>
-<h2 id="#introduction">Itroduction</h2>
+<h2 id="introduction">Itroduction</h2>
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
@@ -63,7 +63,7 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 >
 >       This represents 1 is GREEN and 3 is YELLOW and 5 & 6 are RED
 
-<h2 id="#ux">User Experience (UX)</h2>
+<h2 id="ux">User Experience (UX)</h2>
 
 ### User Stories
 
@@ -81,7 +81,7 @@ As a user I want to:
 ### User Experience in this Game
 This game takes the users' stories mentioned above into consideration to create a positive UX.
 
-<h2 id="#features">Features</h2>
+<h2 id="features">Features</h2>
 
 **Title Section:**
 
@@ -164,7 +164,35 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <a href="#top">Back to the top.</a>
 
-<h2 id="#technologies">Technologies</h2>
+<h2 id="deployment">Deployment</h2>
+
+The site was deployed via [Heroku]( https://id.heroku.com/login), and the live link can be found here: [ENIGMA – Code Breaker](https://enigma-code-breaker.herokuapp.com/) 
+
+This project was developed utilising the [Code Institute Template]( https://github.com/Code-Institute-Org/python-essentials-template).  Some of the deployment steps below are specifically required for the new CI template and may not be applicable to older versions, or different projects.
+
+Before deploying to Heroku pip3 freeze > requirements.txt was used to add pyfiglet and termcolor imports for deployment.
+
+1.	Log in to [Heroku]( https://id.heroku.com/login) or create an account if required.
+2.	Then, click the button labelled **New** from the dashboard in the top right corner and from the drop-down menu select **Create New App**.
+3.	You must enter a unique app name, (I used mastermind-code-breaker).
+4.	Next, select your region, (I chose Europe as I am in Ireland).
+5.	Click on the **Create App** button.
+6.	The next page you will see is the project’s Deploy Tab.  Click on the **Settings Tab** and scroll down to **Config Vars**.
+7.	Click **Reveal Config Vars** and enter **port** into the **Key** box and **8000** into the **Value** box and click the **Add** button.
+8.	Next, scroll down to the Buildpack section click **Add Buildpack** select **python** and click **Save Changes**.
+9.	Repeat step 8 to add **node.js**.
+o	**Note:** The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+10.	Scroll to the top of the page and now choose the **Deploy** tab.
+11.	Select **Github** as the deployment method.
+12.	Confirm you want to connect to GitHub.
+13.	Search for the repository name and click the connect button.
+14.	Scroll to the bottom of the deploy page and select preferred deployment type:
+
+* Click either **Enable Automatic Deploys** for automatic deployment when you push updates to Github.
+
+* Select the correct branch for deployment from the drop-down menu and click **Deploy Branch** for manual deployment.
+
+<h2 id="technologies">Technologies</h2>
 
 Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
 

@@ -25,7 +25,7 @@ class Welcome:
         ENIGMA Title & welcome message
         """
         heading = Figlet(font='banner3-D', justify="center")
-        print(colored(heading.renderText('ENIGMA'), 'red'))
+        print(heading.renderText('ENIGMA'))
 
         sub_heading = Figlet(font='digital', justify="center")
         print(colored(sub_heading.renderText(
@@ -58,8 +58,11 @@ class Newgame:
 
         elif start_select == 'n':
             os.system("clear")
-            print(colored("\nThanks for playing. " +
-                          "See you next time!!!!\n", "green"))
+            bye_message = Figlet(font='digital', justify="center")
+            print(colored(bye_message.renderText(
+             '\nGoodbye thanks for playing'), 'green'))
+            # print(colored("\nGoodbye thanks for playing! " +
+            #               "See you next time!!!!\n", "green"))
             exit()
 
         else:

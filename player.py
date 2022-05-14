@@ -119,8 +119,8 @@ class Player:
             # Start game if p is entered
             if control_select == "p":
                 os.system("clear")
-                heading = Figlet(font='banner3-D', justify='center')
-                print(colored(heading.renderText('ENIGMA'), 'red'))
+                heading = Figlet(font='banner3-D', justify="center")
+                print(heading.renderText('ENIGMA'))
                 getcracking_text = (colored("Let's Get " +
                                             "Cracking!\n", "green"))
                 for char in getcracking_text:
@@ -130,8 +130,11 @@ class Player:
             # Exit game if x is entered
             elif control_select == 'x':
                 os.system("clear")
-                print(colored("\nThanks for playing " +
-                              "See you next time!!!!\n", "green"))
+                bye_message = Figlet(font='digital', justify="center")
+                print(colored(bye_message.renderText(
+                 '\nGoodbye thanks for playing'), 'green'))
+                # print(colored("\nThanks for playing " +
+                #               "See you next time!!!!\n", "green"))
                 exit()
             else:
                 print(colored('Sorry, that is not a valid ' +
@@ -140,8 +143,8 @@ class Player:
 
         elif control_select == "p":
             os.system("clear")
-            heading = Figlet(font='banner3-D', justify='center')
-            print(colored(heading.renderText('ENIGMA'), 'red'))
+            heading = Figlet(font='banner3-D', justify="center")
+            print(heading.renderText('ENIGMA'))
             getcracking_text = (colored("Let's Get Cracking!\n", "green"))
             for char in getcracking_text:
                 sleep(0.1)

@@ -1,10 +1,4 @@
 """ Main Game Control """
-# import os to help clear terminal
-import os
-
-# import termcolor for adding colour to text
-from termcolor import colored
-
 # import player class
 from player import Player
 
@@ -17,32 +11,8 @@ from attempts import Attempts
 # import player class
 from game import Welcome
 
-
-class Newgame:
-    """
-    Start new game
-    """
-    @staticmethod
-    def start_new_game():
-        """
-        Reset score & code, start new game
-        """
-        start_select = input(
-            '\nTo play again, type ' +
-            colored('Y ', 'green') + 'otherwise enter ' +
-            colored('N ', 'red') + 'to exit game:\n').lower()
-        if start_select == 'y':
-            os.system("clear")
-            main()
-
-        elif start_select == 'n':
-            os.system("clear")
-            print(colored("\nThanks for playing. " +
-                          "See you next time!!!!\n", "green"))
-            exit()
-
-        else:
-            print(colored('\nSorry, that is not a valid entry\n', 'red'))
+# import player class
+from game import Newgame
 
 
 def main():

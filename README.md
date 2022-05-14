@@ -1,19 +1,18 @@
-# **ENIGMA**
 <h1 id="top"><a href="https://enigma-code-breaker.herokuapp.com/">ENIGMA CODE BREAKER</a></h1>
 
 ## Contents
 <ul>
     <li>
-        <a href="#Introduction"><strong>Introduction</strong></a>
+        <a href="#introduction"><strong>Introduction</strong></a>
     </li>
     <li>
-        <a href="#UX"><strong>UX</strong></a>               
+        <a href="#ux"><strong>UX</strong></a>               
     </li>
      <li>
-        <a href="#Features"><strong>Features</strong></a>
+        <a href="#features"><strong>Features</strong></a>
     </li>
     <li>
-        <a href="#Technologies"><strong>Technologies</strong></a>
+        <a href="#technologies"><strong>Technologies</strong></a>
     </li>
     <li>
         <a href="#Testing"><strong>Testing</strong></a>   
@@ -29,7 +28,7 @@
     </li>
 </ul>
 <hr>
-# Introduction
+<h2 id="#introduction">Itroduction</h2>
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
@@ -64,8 +63,7 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 >
 >       This represents 1 is GREEN and 3 is YELLOW and 5 & 6 are RED
 
-
-## User Experience (UX)
+<h2 id="#ux">User Experience (UX)</h2>
 
 ### User Stories
 
@@ -83,7 +81,7 @@ As a user I want to:
 ### User Experience in this Game
 This game takes the users' stories mentioned above into consideration to create a positive UX.
 
-## Features
+<h2 id="#features">Features</h2>
 
 **Title Section:**
 
@@ -166,7 +164,7 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <a href="#top">Back to the top.</a>
 
-# Technologies
+<h2 id="#technologies">Technologies</h2>
 
 Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
 

@@ -167,6 +167,8 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 <h2 id="testing">Development & Testing</h2>
 
 **Flow Chart**
+<br><br>
+To design the order in which individual statements, instructions or function calls were executed or evaluated a flow chart was used for the control flow. Here, the flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written.
 
 <img src="assets/flowchart/enigma-flow-chart.png"><br><br>
 

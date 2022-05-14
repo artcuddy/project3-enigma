@@ -94,19 +94,20 @@ class Player:
             print('\nYour guess must be ' + colored('4 ', 'yellow') +
                   'numbers, and ' + 'you can only use the same number once!')
             print('\nAll numbers in the code must be between 1 and 8')
-            print("\nThe guess format works in two ways: '1234' or '1 2 3 4'")
+            print("\nThe guess input format works " +
+                  "in two ways: '1234' or '1 2 3 4'")
             print("-----------------------")
             print('\nAfter each guess, you will get ' +
                   'four responses in random order:\n')
             print(colored("GREEN: ", "green") +
-                  "One of your numbers is correct " +
+                  "1 of your numbers is correct " +
                   "& it's in the correct location!\n")
             print(colored("YELLOW: ", "yellow") +
-                  "One of your numbers is correct, " +
+                  "1 of your numbers is correct, " +
                   "but it's not in the correct location!\n")
             print(colored('RED: ', 'red') +
-                  'One of your numbers is not in the ' +
-                  colored('ENIGMA ', 'red') + 'code')
+                  '1 of your numbers is not in the ' +
+                  colored('ENIGMA ', 'red') + 'code at all')
             print(colored('\nMatch all 4 numbers to crack the ', 'green') +
                   colored('ENIGMA ', 'red') + colored('code\n', 'green'))
             print("-----------------------")

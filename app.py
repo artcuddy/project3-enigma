@@ -2,34 +2,38 @@
 # import player class
 from player import Player
 
-# import player class
+# import codegenerator class
 from codegenerator import Codegen
 
-# import player class
+# import attempts class
 from attempts import Attempts
 
-# import player class
+# import welcome class
 from game import Welcome
 
-# import player class
+# import newgame class
 from game import Newgame
 
 
 def main():
     """
-    Run all program functions and methods to load
+    Run all program functions and methods to load game
     """
     welcome = Welcome()
 
-    # calling the methods in the Welcome class
+    # calling the Welcome class
     welcome.welcome()
 
+    # calling the Player class
     player = Player()
 
+    # calling the Codegen class
     codegen = Codegen()
 
+    # calling the Attempts class
     attempts = Attempts()
 
+    # calling the Newgame class
     newgame = Newgame()
 
     # calling the methods in the Player class

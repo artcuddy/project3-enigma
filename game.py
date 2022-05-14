@@ -1,4 +1,4 @@
-""" Newgame and Welcome Class sets up attempts object """
+""" Newgame and Welcome Class sets up module """
 # import sleep to enable a delay
 from time import sleep
 

@@ -31,11 +31,11 @@ class Player:
         Get username input from player
         """
         while True:
-            username_data = input("\nEnter your name here to start play:\n")
+            playername = input("\nEnter your name here to start play:\n")
 
-            if self.validate_data(username_data):
+            if self.validate_data(playername):
                 print(colored('\nWelcome ' +
-                              f'{username_data.upper()}\n', 'green'))
+                              f'{playername.upper()}\n', 'green'))
                 in_ten_or_less_text = ('Can you crack the' +
                                        (colored(' ENIGMA ', 'red') +
                                         'code in 10 or less guesses!'))
@@ -58,7 +58,7 @@ class Player:
         try:
             if not username or re.search(r"^\s*$", username):
                 raise ValueError(colored('Sorry username ' +
-                                         'cannot be empty', 'red'))
+                                         'cannot be blank', 'red'))
             elif username.isdigit():
                 raise ValueError(colored('Sorry username cannot be ' +
                                          'just a number', 'red'))

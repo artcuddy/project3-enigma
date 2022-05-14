@@ -12,7 +12,6 @@ from codegenerator import Codegen
 # import newgame class
 from game import Newgame
 
-
 code = Codegen()
 
 newgame = Newgame()

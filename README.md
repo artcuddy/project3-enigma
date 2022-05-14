@@ -9,11 +9,11 @@
     <li>
         <a href="#UX"><strong>UX</strong></a>               
     </li>
-    <li>
-        <a href="#Technologies"><strong>Technologies</strong></a>
+     <li>
+        <a href="#Features"><strong>Features</strong></a>
     </li>
     <li>
-        <a href="#Features"><strong>Features</strong></a>
+        <a href="#Technologies"><strong>Technologies</strong></a>
     </li>
     <li>
         <a href="#Testing"><strong>Testing</strong></a>   
@@ -23,9 +23,6 @@
     </li>
     <li>
        <a href="#Credits"><strong>Credits</strong></a> 
-    </li>
-    <li>
-        <a href="#Screenshots"><strong>Screenshots</strong></a>
     </li>
     <li>
         <a href="#References"><strong>References</strong></a>

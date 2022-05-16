@@ -23,16 +23,13 @@
     <li>
        <a href="#credits"><strong>Credits</strong></a> 
     </li>
-    <li>
-        <a href="#references"><strong>References</strong></a>
-    </li>
 </ul>
 <hr>
 <h2 id="introduction">Itroduction</h2>
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
-This game is losely based on the board game of [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)) from the 1970s.
+This game is losely based on the board game of [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)).
 
 ### Demo
 A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/">**HERE**</a><br><br>
@@ -72,14 +69,10 @@ Target Audience – Anyone who wants to play an online command-line interface st
 As a user I want to:
 * play the game clearly across different devices
 * understand how to play the game
-* play a game that is not timed
 * know how many attempts I have left
 * know when I have entered something in an incorrect format and understand why
 * have fun and be challenged
 * have the choice to easily play again or quit
-
-### User Experience in this Game
-This game takes the users' stories mentioned above into consideration to create a positive UX.
 
 <h2 id="features">Features</h2>
 
@@ -91,7 +84,7 @@ This game takes the users' stories mentioned above into consideration to create 
 
 * For the subtitle the Figlet font used was digital.
 
-* Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!"
+* Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!" utilising [sys-stdout](https://www.geeksforgeeks.org/sys-stdout-write-in-python/) and sleep to printout the letters as if it was a type writer.
 
 **Username Input Section:**
 
@@ -142,7 +135,7 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <img src="assets/screenshots/enigma-letters-error.png"><br><br>
 
-* If the user enters more than 4 mubers as the guess an error will be shown explaining why it's not a vaild guess 
+* If the user enters more than 4 numbers as the guess an error will be shown explaining why it's not a vaild guess 
 
 <img src="assets/screenshots/enigma-to-many-numbers-error.png"><br><br>
 
@@ -162,6 +155,7 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <img src="assets/screenshots/goodbye-screen.png"><br><br>
 
+
 <a href="#top">Back to the top.</a>
 
 <h2 id="testing">Development & Testing</h2>
@@ -171,6 +165,41 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 To design the order in which individual statements, instructions or function calls were executed or evaluated a flow chart was used for the control flow. Here, the flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written.
 
 <img src="assets/flowchart/enigma-flow-chart.png"><br><br>
+
+**Testing**
+
+*   Methods such as print() as the code developed was used to check for errors.  This helped check everything was behaving as expected and functions such as generating the random numbers for the ENIGMA code were being generated correctly.  
+
+*   Any testing user inputs were printed back to the console to check all functions and methods were correctly applied to the input.  
+
+*   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues.  This helped keep the code clean and readable so other errors or bugs that arose were identified more easily.
+
+*   After deployment all features were checked on a laptop, mobile (iPhone 13). The site was sent to peers to check from their devices that all features functioned correctly and feedback on functionality was positive across all devices checked such as PC, Laptop, Tablets and Mobiles (Android & IOS). The website was checked on Chrome, Firefox and Edge.
+
+*   The game was deployed early on in development and checked regularly to ensure game flow and any errors were handled early on.
+
+*   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. As mentioned above in the Features Section for how user inputs were handled.
+
+    *   User Name:
+    As this will accept anything but nothing entered, the enter key was pressed to ensure error was caught and handled appropriately.
+
+    *   Player Choice:
+    To test capital and small R and P were typed in and also other random inputs such as spaces, other letters, words or numbers to ensure error caught and handled appropriately.
+
+    *   Player Guess:
+    As this will only accept 4 numbers between 1-8 separated by a space, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Numbers without spaces or extra spaces and also random special characters and no entry at all were all tested to ensure errors were caught and handled appropriately.
+
+    *   ENIGMA Code Hint:
+    The ENIGMA code was printed to the terminal during development to help with testing the code hint generated matched the player's guesses.  It was checked to ensure numbers in the correct position generated a GREEN hint, numbers in incorrect position generated a YELLOW hint and numbers not in the ENIGMA code at all generated a RED hint.
+
+    *   Attempts Left:
+    Attempts left was checked by playing the game through to see if guesses left decreased by 1 each time and also that guesses left did not change if an input error was entered.
+
+    *   Game Won / Game Lost
+    The game was tested on winning and losing to ensure the correct messages were displayed for both.
+
+    * Play Again
+    As mentioned above in the Features section.  To play again the user can type Y or N.  This was tested for lower and uppercase Y and N to check both worked.  Other inputs such as numbers, random words or letters and the enter key pressed were all checked to ensure the errors were handled correctly and appropriate feedback to the user was given.
 
 
 <a href="#top">Back to the top.</a>
@@ -232,14 +261,8 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
     <li><a href="https://pypi.org/project/termcolor/">Python termcolor library</a>
         <ul>Used to add colour to the text in the python terminal</ul>
     </li>
-    <li><a href="https://favicon.io/" target="_blank">Favicon.io</a>
-        <ul><li>Used to create the tab icon from an original PNG file</li></ul>
-    </li> 
     <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
         <ul><li>To test and search for errors in the Python code</li></ul>
-    </li>
-    <li><a href="https://wave.webaim.org/" target="_blank">WAVE Web Accessibility Evaluation Tool</a>
-        <ul><li>To ensure compliance with accessibility</li></ul>
     </li>
     <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
         <ul><li>To ensure high performance and quick loading times of the website</li></ul>
@@ -256,25 +279,75 @@ This project was developed utilising the [Code Institute Template]( https://gith
 
 Before deploying to Heroku pip3 freeze > requirements.txt was used to add pyfiglet and termcolor imports for deployment.
 
-1.	Log in to [Heroku]( https://id.heroku.com/login) or create an account if required.
-2.	Then, click the button labelled **New** from the dashboard in the top right corner and from the drop-down menu select **Create New App**.
-3.	You must enter a unique app name, (I used enigma-code-breaker).
-4.	Next, select your region, (I chose Europe as I am in Ireland).
-5.	Click on the **Create App** button.
-6.	The next page you will see is the project’s Deploy Tab.  Click on the **Settings Tab** and scroll down to **Config Vars**.
-7.	Click **Reveal Config Vars** and enter **port** into the **Key** box and **8000** into the **Value** box and click the **Add** button.
-8.	Next, scroll down to the Buildpack section click **Add Buildpack** select **python** and click **Save Changes**.
-9.	Repeat step 8 to add **node.js**.
-o	**Note:** The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
-10.	Scroll to the top of the page and now choose the **Deploy** tab.
-11.	Select **Github** as the deployment method.
-12.	Confirm you want to connect to GitHub.
-13.	Search for the repository name and click the connect button.
-14.	Scroll to the bottom of the deploy page and select preferred deployment type:
+This project was deployed to Heroku using the Heroku CLI details below
+
+* Login
+To use the CLI you must log in to your Heroku account. To do this you will need to
+enter the command heroku login -i in the terminal. It requires the email and
+password you used to sign up. If you have enabled multi-factor authentication (a
+recommended security practice) then instead of your password you need an API key.
+To get the API key go to your account settings and scroll down to the section ‘API
+Key’. Click reveal and copy that, then paste it into the password prompt.
+
+<img src="assets/screenshots/heroku-login-cli.jpg"><br><br>
+
+* Creating A Heroku App
+Now that you are logged in, the first thing is to create a new app. Heroku creates a
+URL based on your app name, so it must be unique not only on your account, but
+across the whole site. You may need to try a few different names. To create an app
+use the following command, where myapp is the name of your app.
+
+<img src="assets/screenshots/creating-heroku-app.jpg"><br><br>
+
+* Here the app heroku-cli-example has been created with an output of the website
+URL. It also displays and sets the git remote repository which will be used to deploy.
+By default the region will be set to the US. If you would prefer a server based in the
+EU then you can specify the region with the flag EU
+
+* Packages
+* When you push code to Heroku it will look at the repository contents to decide how
+to build the project. One of the factors taken into consideration is the package file.
+With a Python project the standard file is a requirements.txt file, which will have the
+list of packages needed to run the project. If this file is present it will build the project
+using the Python buildpack.
+<br><br>
+* It is also possible to specify the buildpack manually. For the projects covered in the
+course this is unnecessary but useful to know for the future. More information about
+buildpacks can be found in the documentation. To check the buildpack for the
+project you can enter heroku buildpacks in the terminal.
+
 
 * Click either **Enable Automatic Deploys** for automatic deployment when you push updates to Github.
 
 * Select the correct branch for deployment from the drop-down menu and click **Deploy Branch** for manual deployment.
+
+<a href="#top">Back to the top.</a>
+
+<h2 id="credits">Credits</h2>
+
+I have listed some of the resources I used for inspiration and in researching how to create the ENIGMA Codebreaker Game
+
+* Mastermind Game with Python: Tutorial: <a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Youtube</a>
+
+* Mastermind Mini Project by: <a href="https://github.com/monicode/Python-Mini-Projects/blob/master/mastermind%20colors.py" target="_blank">Monicode</a>
+
+* Instructables <a href="https://www.instructables.com/Python-Mastermind-Game/" target="_blank">Python Mastermind Game</a>
+
+* Create a Mastermind Game <a href="https://www.askpython.com/python/examples/create-mastermind-game-in-python" target="_blank">Ask Python</a>
+
+These resources helped me solve some of the issues encountered when developing the game
+
+* How to use Pyfiglet to display the game Heading & Subheading <a href="https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/" target="_blank">Pyfiglet</a>
+
+* Termcolor ANSII Color formatting for output in terminal: <a href="https://pypi.org/project/termcolor/" target="_blank">Termcolor</a>
+
+* Difference between staticmethond & classmethod: <a href="https://stackoverflow.com/questions/136097/difference-between-staticmethod-and-classmethod/1669524#1669524" target="_blank">Stack Overflow</a>
+
+<a href="#top">Back to the top.</a>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+This project was made possible due to the help & advice from my Mentor Rohit and all the Code Institute Slack community, extensive Googling and the Stack Overflow community.
 
 
 

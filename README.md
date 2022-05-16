@@ -64,10 +64,9 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 
 ### User Stories
 
-Target Audience – Anyone who wants to play an online command-line interface strategy game for a fun challenge.
+Target Audience – Anyone who wants to play an online command-line interface strategy game.
 
 As a user I want to:
-* play the game clearly across different devices
 * understand how to play the game
 * know how many attempts I have left
 * know when I have entered something in an incorrect format and understand why
@@ -347,6 +346,8 @@ I have listed some of the resources I used for inspiration and in researching ho
 
 * Create a Mastermind Game <a href="https://www.askpython.com/python/examples/create-mastermind-game-in-python" target="_blank">Ask Python</a>
 
+* Mastermind in Python <a href="https://www.ddtechblog.com/Mastermind-in-python" target="_blank">DDTECHBLOG</a>
+
 These resources helped me solve some of the issues encountered when developing the game
 
 * How to use Pyfiglet to display the game Heading & Subheading <a href="https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/" target="_blank">Pyfiglet</a>
@@ -354,6 +355,8 @@ These resources helped me solve some of the issues encountered when developing t
 * Termcolor ANSII Color formatting for output in terminal: <a href="https://pypi.org/project/termcolor/" target="_blank">Termcolor</a>
 
 * Difference between staticmethond & classmethod: <a href="https://stackoverflow.com/questions/136097/difference-between-staticmethod-and-classmethod/1669524#1669524" target="_blank">Stack Overflow</a>
+
+* Python classes: <a href="https://www.programiz.com/python-programming/class" target="_blank">Programiz</a>
 
 <a href="#top">Back to the top.</a>
 

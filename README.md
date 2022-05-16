@@ -213,6 +213,10 @@ The flow of the game was laid out and structured to aid in the design of the con
 
 * <a href="http://pep8online.com" target="_blank">PEP8 ONLINE</a> was used for validating the python files. All python files were checked with no errors reported.
 
+* <a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
+
+<img src="assets/screenshots/enigma-lighthouse.png"><br><br>
+
 <a href="#top">Back to the top.</a>
 
 <h2 id="technologies">Technologies</h2>

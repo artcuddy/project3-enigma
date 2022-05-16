@@ -69,7 +69,7 @@ class Player:
 
         return True
 
-    def game_control(self):
+    def enigma_game_control(self):
         """
         Give the player the option to display help
         or intructions
@@ -131,11 +131,11 @@ class Player:
             # Exit help if x is entered
             elif help_select == 'x':
                 os.system("clear")
-                self.game_control()
+                self.enigma_game_control()
             else:
                 print(colored('Sorry, that is not a valid ' +
                               'entry only\n', 'red'))
-                self.game_control()
+                self.enigma_game_control()
 
         elif control_select == "p":
             os.system("clear")
@@ -150,4 +150,4 @@ class Player:
         else:
             print(colored('Sorry, that is not a valid entry only ' +
                           'H or P accepted\n', 'red'))
-            self.game_control()
+            self.enigma_game_control()

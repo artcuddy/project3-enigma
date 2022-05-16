@@ -27,9 +27,9 @@ class Attempts:
         Keep track of the player attempts display game lost message
         """
         attempts = 10
-        computer_list = code.create_comp_list()
+        enigma_list = code.create_enigma_list()
         while True:
-            if code.check_values(computer_list, code.get_guess()) is True:
+            if code.check_values(enigma_list, code.get_guess()) is True:
                 break
             else:
                 attempts -= 1
@@ -43,7 +43,7 @@ class Attempts:
                           colored("GAME OVER.", "red"))
                     player_list = ""
                     for i in range(4):
-                        player_list += str(computer_list[i])
+                        player_list += str(enigma_list[i])
                     print("\nThe " + colored("ENIGMA ", "red") +
                           "code was: " + player_list)
                     newgame.start_new_game()

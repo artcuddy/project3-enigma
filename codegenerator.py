@@ -20,7 +20,7 @@ class Codegen:
     """
 
     @staticmethod
-    def create_comp_list():
+    def create_enigma_list():
         """
         Create the secret random code
         """

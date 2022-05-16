@@ -38,10 +38,10 @@ def main():
 
     # calling the methods in the Player class
     player.get_player_name()
-    player.game_control()
+    player.enigma_game_control()
 
     # calling the methods in the Codegen class
-    codegen.create_comp_list()
+    codegen.create_enigma_list()
 
     # calling the methods in the Attempts class
     attempts.player_attempts()

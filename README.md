@@ -169,7 +169,7 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 
 ### Flow Chart
-<br><br>
+
 The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in [Lucid Chart]( https://lucid.app/).
 
 <img src="assets/flowchart/enigma-flow-chart.png"><br><br>

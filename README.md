@@ -54,7 +54,7 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 >
 >       ENIGMA code is 1234
 >
->       guess is: 1356
+>       You guessed: 1356
 >
 >       ENIGMA hint will be: RED RED GREEN YELLOW
 >
@@ -155,14 +155,23 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <img src="assets/screenshots/goodbye-screen.png"><br><br>
 
+<h2 id="future-features">Possible Future Features</h2>
+
+* The ENIGMA game is a one-player versus the computer game but this game could be made into a 2 player game. As with the original Mastermind Game the first player makes the code for the second player to guess. After that player has won or lost, it is then their turn to create the code for the other player to now attempt to guess. 
+
+* The ENIGMA game does not give the option to show high scores. This could be implemented using a Google Spreadsheet to store the number of attempts it took for each name entered. This scoreboard could then be displayed by printing the contents of it to the terminal.
+
+* To make this game harder for different levels more numbers could be added to the ENIGMA code or fewer attempts given. 
+
 
 <a href="#top">Back to the top.</a>
 
 <h2 id="testing">Development & Testing</h2>
 
+
 **Flow Chart**
 <br><br>
-To design the order in which individual statements, instructions or function calls were executed or evaluated a flow chart was used for the control flow. Here, the flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written.
+The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in [Lucid Chart]( https://lucid.app/).
 
 <img src="assets/flowchart/enigma-flow-chart.png"><br><br>
 
@@ -180,22 +189,22 @@ To design the order in which individual statements, instructions or function cal
 
 *   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. As mentioned above in the Features Section for how user inputs were handled.
 
-    *   User Name:
-    As this will accept anything but nothing entered, the enter key was pressed to ensure error was caught and handled appropriately.
+    * User Name:
+    This will accept letters and numbers but cannot be blank or just numbers, the space key was pressed and also just numbers entered to ensure the errors was caught and handled appropriately.
 
-    *   Player Choice:
+    * Player Choice:
     To test capital and small R and P were typed in and also other random inputs such as spaces, other letters, words or numbers to ensure error caught and handled appropriately.
 
-    *   Player Guess:
-    As this will only accept 4 numbers between 1-8 separated by a space, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Numbers without spaces or extra spaces and also random special characters and no entry at all were all tested to ensure errors were caught and handled appropriately.
+    * Player Guess:
+    As this will only accept 4 numbers between 1-8 separated by a space, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Random special characters and no entry at all were all tested to ensure errors were caught and handled appropriately.
 
-    *   ENIGMA Code Hint:
+    * ENIGMA Code Hint:
     The ENIGMA code was printed to the terminal during development to help with testing the code hint generated matched the player's guesses.  It was checked to ensure numbers in the correct position generated a GREEN hint, numbers in incorrect position generated a YELLOW hint and numbers not in the ENIGMA code at all generated a RED hint.
 
-    *   Attempts Left:
+    * Attempts Left:
     Attempts left was checked by playing the game through to see if guesses left decreased by 1 each time and also that guesses left did not change if an input error was entered.
 
-    *   Game Won / Game Lost
+    * Game Won / Game Lost
     The game was tested on winning and losing to ensure the correct messages were displayed for both.
 
     * Play Again

@@ -22,7 +22,7 @@ class Codegen:
     @staticmethod
     def create_enigma_list():
         """
-        Create the secret random code
+        Create the randon ENIGMA code
         """
         nums = [i+1 for i in range(8)]
         num_list = []
@@ -46,8 +46,7 @@ class Codegen:
             unique_issue = False
             len_issue = False
 
-            guess = input("Enter your guess (4 unique numbers " +
-                          "between 1 and 8): ")
+            guess = input("Enter your guess: ")
 
             for number in guess:
                 try:
@@ -77,6 +76,7 @@ class Codegen:
                         guess_list = list(guess)
                         for i in range(4):
                             guess_list[i] = int(guess_list[i])
+                        print('\nYou guessed: ' + guess)
                         return guess_list
 
     def check_values(self, enigma, user):

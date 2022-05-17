@@ -5,9 +5,6 @@ from player import Player
 # import codegenerator class
 from codegenerator import Codegen
 
-# import attempts class
-from attempts import Attempts
-
 # import welcome class
 from game import Welcome
 
@@ -30,9 +27,6 @@ def main():
     # calling the Codegen class
     codegen = Codegen()
 
-    # calling the Attempts class
-    attempts = Attempts()
-
     # calling the Newgame class
     newgame = Newgame()
 
@@ -42,9 +36,7 @@ def main():
 
     # calling the methods in the Codegen class
     codegen.create_enigma_list()
-
-    # calling the methods in the Attempts class
-    attempts.player_attempts()
+    codegen.player_attempts()
 
     # calling the methods in the Newgame class
     newgame.start_new_game()

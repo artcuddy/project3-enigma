@@ -121,5 +121,34 @@ class Codegen:
             print("\n-----------------\n")
             print(colored(win_message.renderText('YOU WON'), 'green'))
             print("-----------------\n")
+            # print('You cracked the ENIGMA code in ' + attempts)
             newgame.start_new_game()
             return True
+
+    def player_attempts(self):
+        """
+        Keep track of the player attempts display game lost message
+        """
+        attempts = 10
+        enigma_list = self.create_enigma_list()
+        while True:
+            if self.check_values(enigma_list, self.get_guess()) is True:
+                break
+            else:
+                attempts -= 1
+                print("\nAttempts left:", colored(attempts, 'red'))
+                print("----------\n")
+                if attempts == 0:
+                    # output lose message if attempts reach 0
+                    lose_message = Figlet(font='banner3-D', justify="center")
+                    print(colored(lose_message.renderText('YOU LOSE'), 'red'))
+                    print("\nYou are out of attempts! " +
+                          colored("GAME OVER.", "red"))
+                    player_list = ""
+                    for i in range(4):
+                        player_list += str(enigma_list[i])
+                    print("\nThe " + colored("ENIGMA ", "red") +
+                          "code was: " + player_list)
+                    newgame.start_new_game()
+
+                    break

@@ -121,7 +121,6 @@ class Codegen:
             print("\n-----------------\n")
             print(colored(win_message.renderText('YOU WON'), 'green'))
             print("-----------------\n")
-            # print('You cracked the ENIGMA code in ' + attempts)
             newgame.start_new_game()
             return True
 

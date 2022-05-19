@@ -227,17 +227,13 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
 ### Languages
 <ol>
     <li><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML</a>
-        <ul><li>The main structure of the website</li></ul>
-    </li>
-    <li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a>
-        <ul><li>For the design of the site</li></ul>
+        <ul><li>The main structure of the game container</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
         <ul><li>Within the template supplied by code institute</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
-        <ul><li>For hosting a local server during for testing</li>
-        <li>For the gameplay logic</li></ul>
+        <ul><li>For the gameplay logic</li></ul>
     </li>
     <li><a href="https://www.markdownguide.org/" target="_blank">Markdown</a>
         <ul><li>For the content and structure of the README.md</li></ul>

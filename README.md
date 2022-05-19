@@ -62,6 +62,8 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 
 <h2 id="ux">User Experience (UX)</h2>
 
+<a href="#top">Back to the top.</a>
+
 ### User Stories
 
 Target Audience – Anyone who wants to play an online command-line interface strategy game.
@@ -74,6 +76,8 @@ As a user I want to:
 * have the choice to easily play again or quit
 
 <h2 id="features">Features</h2>
+
+<a href="#top">Back to the top.</a>
 
 ### Title Section:
 
@@ -162,10 +166,9 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 * To make this game harder for different levels more numbers could be added to the ENIGMA code or fewer attempts given. 
 
+<h2 id="testing">Development & Testing</h2>
 
 <a href="#top">Back to the top.</a>
-
-<h2 id="testing">Development & Testing</h2>
 
 
 ### Flow Chart
@@ -217,9 +220,10 @@ The flow of the game was laid out and structured to aid in the design of the con
 
 <img src="assets/screenshots/enigma-lighthouse.png"><br><br>
 
-<a href="#top">Back to the top.</a>
 
 <h2 id="technologies">Technologies</h2>
+
+<a href="#top">Back to the top.</a>
 
 Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
 
@@ -264,7 +268,14 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
     </li>
 </ol>
     
-### Frameworks, Libraries and Programs
+## Frameworks, Libraries and Programs
+
+### os
+The os library was imported to create a function to utilise the os.system to clear the terminal. 
+
+### random
+The random library was imported to access the built-in method of generating a random number selection using the randint() method. This then generates a random sequence of 4 numbers in a range of 1 – 8 for the ENIGMA code the user has to crack.
+
 <ol> 
     <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
         <ul>Used to delay the next line of text in the python terminal</ul>
@@ -280,9 +291,9 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
     </li>
 </ol><br> 
 
-<a href="#top">Back to the top.</a>
-
 <h2 id="deployment">Deployment</h2>
+
+<a href="#top">Back to the top.</a>
 
 ### This project was created on GitHub and Edited in GitPod by carrying out the following:
 
@@ -401,9 +412,10 @@ If you want to make changes to the repo without affecting it, you can make a cop
     <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
 </ol>
 
-<a href="#top">Back to the top.</a>
 
 <h2 id="credits">Credits</h2>
+
+<a href="#top">Back to the top.</a>
 
 I have listed some of the resources I used for inspiration and in researching how to create the ENIGMA Codebreaker Game
 

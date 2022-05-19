@@ -134,7 +134,7 @@ class Player:
                 self.enigma_game_control()
             else:
                 print(colored('Sorry, that is not a valid ' +
-                              'entry only\n', 'red'))
+                              'entry only P or X accepted\n', 'red'))
                 self.enigma_game_control()
 
         elif control_select == "p":

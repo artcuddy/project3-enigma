@@ -98,7 +98,7 @@ class Game:
             else:
                 return_list_red.append(colored("RED", "red"))
 
-        # join both lists for printing colour hints with termcolor
+        # join the 3 seperate lists for printing colour hints with termcolor
         return_list = (
             ' '.join(str(item) for item in return_list_green)) + (' ') + (
                 ' '.join(str(item) for item in return_list_yellow)) + (' ') + (

@@ -29,7 +29,7 @@
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
-This game is losely based on the board game of [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)).
+This is a simple python code breaking game losely based on the Master Mind game made by Mordecai Meirowitz in 1970. It's a single player versus the computer game. [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)).
 
 ### Demo
 A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/">**HERE**</a><br><br>
@@ -66,7 +66,7 @@ ENIGMA gameplay, players try to crack the ENIGMA code randomly chosen by the com
 
 ### User Stories
 
-Target Audience – Anyone who wants to play an online command-line interface strategy game.
+Target Audience – Anyone who wants to play a simple online command-line interface strategy game.
 
 As a user I want to:
 * understand how to play the game
@@ -180,15 +180,15 @@ The flow of the game was laid out and structured to aid in the design of the con
 
 ### Testing
 
-*   Methods such as print() as the code developed was used to check for errors.  This helped check everything was behaving as expected and functions such as generating the random numbers for the ENIGMA code were being generated correctly.  
+*   Methods such as print() as the code developed was used to check for errors. This helped check everything was behaving as expected and functions such as generating the random numbers for the ENIGMA code were being generated correctly.  
 
-*   Any testing user inputs were printed back to the console to check all functions and methods were correctly applied to the input.  
+*   Any user inputs were printed back to the console to check and test all functions and methods were correctly applied to the input.  
 
-*   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues.
+*   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues. No errors are reported now.
 
 *   After deployment all features were checked on a laptop, mobile (iPhone 13). The website was checked on Chrome, Firefox and Edge.
 
-*   The game was deployed early on in development and checked regularly to ensure game flow and any errors were handled early on.
+*   The game was deployed early on in development and checked regularly to ensure game flow and any errors pn Heroku were handled .
 
 *   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. 
 
@@ -199,7 +199,7 @@ The flow of the game was laid out and structured to aid in the design of the con
     To test capital and small H and X were typed in and also other random inputs such as spaces, other letters, words or numbers to ensure error caught and handled appropriately.
 
     * Player Guess:
-    As this will only accept 4 numbers between 1-8, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Random special characters and blank entry were all tested to ensure errors were caught and handled appropriately.
+    As this will only accept 4 numbers between 1-8, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Random special characters and blank entry were all tested to ensure errors were caught and handled appropriately. Error message regarding the different errors are returned to the player.
 
     * ENIGMA Code Hint:
     The ENIGMA code was printed to the terminal during development to help with testing the code hint generated matched the player's guesses.  It was checked to ensure numbers in the correct position generated a GREEN hint, numbers in incorrect position generated a YELLOW hint and numbers not in the ENIGMA code at all generated a RED hint.
@@ -211,7 +211,7 @@ The flow of the game was laid out and structured to aid in the design of the con
     The game was tested on winning and losing to ensure the correct messages were displayed for both.
 
     * Play Again
-    As mentioned above in the Features section.  To play again the user can type Y or N.  This was tested for lower and uppercase Y and N to check both worked.  Other inputs such as numbers, random words or letters and the enter key pressed were all checked to ensure the errors were handled correctly and appropriate feedback to the user was given.
+    To play again the user can type Y or N. This was tested for lower and uppercase Y and N to check both worked. Other inputs such as numbers, random words or letters and the enter key pressed were all checked to ensure the errors were handled correctly and error message regarding the different errors are returned to the player.
 
 ### Username Input Section:
 
@@ -282,7 +282,50 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <img src="assets/screenshots/goodbye-screen.png"><br><br>
 
-### Validator Testing
+## Issues solved during development
+
+## ENIGMA hint colours
+
+I had an issue when using termcolor for the ENIGMA hint colour words GREEN, YELLOW & RED.
+
+After a few Google searches I found that lists don't have a concept of colour in Python.
+
+To be able do this 3 new lists were made, 1 for GREEN return_list_green, 1 for Yellow return_list_yellow and 1 for RED return_list_red. Then append and join the 3 lists in to one. Each item in the list is looped through so termcolor works on print and can add the individual colors to the items in the return_list.
+
+>**Join lists:**
+>
+>       # join the 3 seperate lists for printing colour hints with termcolor
+>        return_list = (
+>            ' '.join(str(item) for item in return_list_green)) + (' ') + (
+>                ' '.join(str(item) for item in return_list_yellow)) + (' ') + (
+>                ' '.join(str(item) for item in return_list_red))
+>        print("\nENIGMA Hint: " + return_list)
+>        return self.check_win(return_list)
+
+## Player Guess validation
+
+To validate the players guess and make sure that only 4 numbers between 1- 8 where used as the guess I had to validate the players guess utilising 3 different methods and then returning the validated guess:
+
+**Validate the players guess:**
+
+>       # join the 3 seperate lists for printing colour hints with termcolor
+>       #number_issue: this was used to validate if the numbers entered were between 1 and 8
+>
+>        if int(number) < 1 or int(number) > 8:
+>                       number_issue = True
+>
+>        #unique_issue: this was used to validate if the numbers entered were unique and not duplicated
+>
+>        if player_guess.count(number) > 1:
+>                        unique_issue = True
+>
+>        #length_issue: this was used to validate if the numbers entered are exactly 4 numbers not more or less
+>
+>        if len(player_guess) != 4:
+>                        length_issue = True
+
+
+## Validator Testing
 
 * <a href="http://pep8online.com" target="_blank">PEP8 ONLINE</a> was used for validating the python files. All python files were checked with no errors reported.
 
@@ -353,8 +396,7 @@ With a Python project the standard file is a requirements.txt file, which will h
 list of packages needed to run the project. If this file is present it will build the project
 using the Python buildpack.
 <br><br>
-* It is also possible to specify the buildpack manually. For the projects covered in the
-course this is unnecessary but useful to know for the future. More information about
+* It is also possible to specify the buildpack manually. More information about
 buildpacks can be found in the documentation. To check the buildpack for the
 project you can enter heroku buildpacks in the terminal.
 
@@ -368,13 +410,13 @@ There are many ways to deploy the project locally on your own device. Forking, C
 
 #### Forking the GitHub repo
 If you want to make changes to the repo without affecting it, you can make a copy of it by 'Forking' it. This will make sure that the original repo remains unchanged.
+
 <ol>
     <li>Log in to your GitHub account</li>
     <li>Navigate to the repository <a href="https://github.com/artcuddy/project3-enigma"><strong>HERE</strong></a></li>
     <li>Select the 'Fork' button in the top right corner of the page (under your account image)</li>
     <li>The repo has now been copied into your own repos and you can work on it in your chosen IDE</li>
     <li>If you have any suggestions to make regards to the code to make the site better, you can put in a pull request</li>
-    <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
 </ol>
 
 #### Cloning the repo with GitPod
@@ -386,8 +428,6 @@ If you want to make changes to the repo without affecting it, you can make a cop
     <li>Open a new workspace in GitPod</li>
     <li>In the bash terminal type 'git clone [copy url here from step 4]'</li>
     <li>Press enter - the IDE will clone and download the repo</li>
-    <li>You can then type 'python3 -m http.server' to host the website locally - this will not run the python file, only allow you to check how the web-app looks.</li>
-    <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
 </ol>
 
 #### Github Desktop
@@ -398,7 +438,6 @@ If you want to make changes to the repo without affecting it, you can make a cop
     <li>Select 'Open with GitHub Desktop'</li>
     <li>If you haven't already installed GitHub desktop application - you will need to follow the relevant steps to do this</li>
     <li>The repo will then be copied locally onto your machine</li>
-    <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
 </ol>
 
 #### Download and extract the zip directly from GitHub

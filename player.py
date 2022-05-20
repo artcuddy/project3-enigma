@@ -43,6 +43,13 @@ class Player:
         If input empty and enter hit return error,
         or if only numbers entered return error
         otherwise accept all characters for codename
+
+        Args:
+            param1: self.
+            param2: username.
+
+        Returns:
+            True: if the username vaildates.
         """
         try:
             if not username or re.search(r"^\s*$", username):
@@ -117,7 +124,7 @@ class Player:
 
 def helpscreen():
     """
-    Display help screenn for intructions
+    function to display help screen for intructions
     """
     print("-----------------------\n")
     print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))

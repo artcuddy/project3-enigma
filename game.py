@@ -18,10 +18,18 @@ class Game:
     Validate players quess inputs
     and return vaildation
     """
-
-    def get_player_guess(self):
+    @staticmethod
+    def get_player_guess():
         """
         Get the players guess, check for errors
+
+        Static Method
+
+        Returns:
+            guess_list: List with the players guess input.
+
+        Raises:
+            number_issue: Raises an exception.
         """
         while True:
             # issue default to catch errors in player guess
@@ -65,6 +73,13 @@ class Game:
     def check_values(self, enigma, user):
         """
         Check the players guess values against the ENIGMA code
+
+        Args:
+            param1: enigma.
+            param2: user.
+
+        Returns:
+            return_list: Returns the guess with hints.
         """
         return_list = []
         return_list_green = []
@@ -94,6 +109,12 @@ class Game:
     def check_win(self, response_list):
         """
         Check if player guesess match ENIGMA code and output win message
+
+        Args:
+            param1: response_list.
+
+        Returns:
+            True if player has won and prints win message
         """
         # code to validate player guess against ENIGMA code
         if response_list.split() == ['\x1b[32mGREEN\x1b[0m',
@@ -109,7 +130,14 @@ class Game:
 
     def player_attempts(self):
         """
-        Keep track of the player attempts display game lost message
+        Keep track of the player attempts display
+        game lost message if attempts reach 0
+
+        Args:
+            param1: self.
+
+        Returns:
+            lose_message: if player has lost and prints loser message
         """
         attempts = 10
         enigma_list = code.create_enigma_list()

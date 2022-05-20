@@ -11,11 +11,11 @@
      <li>
         <a href="#features"><strong>Features</strong></a>
     </li>
-     <li>
-        <a href="#testing"><strong>Development & Testing</strong></a>   
-    </li>
     <li>
         <a href="#technologies"><strong>Technologies</strong></a>
+    </li>
+     <li>
+        <a href="#testing"><strong>Development & Testing</strong></a>   
     </li>
     <li>
         <a href="#deployment"><strong>Deployment</strong></a>
@@ -89,6 +89,130 @@ As a user I want to:
 
 * Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!" utilising [sys-stdout](https://www.geeksforgeeks.org/sys-stdout-write-in-python/) and sleep to printout the letters as if it was a type writer.
 
+
+<h2 id="future-features">Possible Future Features</h2>
+
+* The ENIGMA game is a one-player versus the computer game but this game could be made into a 2 player game.  
+
+* The ENIGMA game does not give the option to show high scores. This could be implemented using a Google Spreadsheet to store the number of attempts it took for each name entered. This scoreboard could then be displayed by printing the contents of it to the terminal.
+
+* To make this game harder with different levels more numbers could be added to the ENIGMA code or fewer attempts given. 
+
+<h2 id="technologies">Technologies</h2>
+
+<a href="#top">Back to the top.</a>
+
+Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
+
+### Languages
+<ol>
+    <li><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML</a>
+        <ul><li>The main structure of the game container</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+        <ul><li>Within the template supplied by code institute</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
+        <ul><li>For the gameplay logic</li></ul>
+    </li>
+    <li><a href="https://www.markdownguide.org/" target="_blank">Markdown</a>
+        <ul><li>For the content and structure of the README.md</li></ul>
+    </li>
+</ol>   
+
+### Version Control
+<ol>
+    <li><a href="https://github.com/" target="_blank">Git & Github</a>
+        <ul><li>For the hosting and version control of the game</li></ul>
+    </li>
+    <li><a href="https://www.gitpod.io/" target="_blank">Gitpod</a>
+        <ul><li>The development environment used for writing the code for the game</li></ul>
+    </li>
+</ol>
+
+
+### Applications    
+<ol>
+   <li><a href="https://lucid.app/" target="_blank">Lucid Chart</a>
+        <ul><li>For the creation of the flowchart</li></ul>
+    </li>
+    <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
+        <ul><li>For testing out ideas without interfering with code for website</li></ul>
+    </li>
+    <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
+        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and coding.</li></ul>
+    </li>
+</ol>
+    
+## Frameworks, Libraries and Programs
+
+### os
+The os library was imported to create a function to utilise the os.system to clear the terminal. 
+
+### random
+The random library was imported to access the built-in method of generating a random number selection using the randint() method. This then generates a random sequence of 4 numbers in a range of 1 – 8 for the ENIGMA code the user has to crack.
+
+<ol> 
+    <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
+        <ul>Used to delay the next line of text in the python terminal</ul>
+    </li>
+    <li><a href="https://pypi.org/project/termcolor/">Python termcolor library</a>
+        <ul>Used to add colour to the text in the python terminal</ul>
+    </li>
+    <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
+        <ul><li>To test and search for errors in the Python code</li></ul>
+    </li>
+    <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
+        <ul><li>To ensure high performance and quick loading times of the website</li></ul>
+    </li>
+</ol><br> 
+
+<h2 id="testing">Development & Testing</h2>
+
+<a href="#top">Back to the top.</a>
+
+
+### Flow Chart
+
+The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in [Lucid Chart]( https://lucid.app/).
+
+<img src="assets/flowchart/enigma-flow-chart.png"><br><br>
+
+### Testing
+
+*   Methods such as print() as the code developed was used to check for errors.  This helped check everything was behaving as expected and functions such as generating the random numbers for the ENIGMA code were being generated correctly.  
+
+*   Any testing user inputs were printed back to the console to check all functions and methods were correctly applied to the input.  
+
+*   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues.
+
+*   After deployment all features were checked on a laptop, mobile (iPhone 13). The website was checked on Chrome, Firefox and Edge.
+
+*   The game was deployed early on in development and checked regularly to ensure game flow and any errors were handled early on.
+
+*   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. 
+
+    * User Name:
+    This will accept letters and numbers but cannot be blank or just numbers, the space key was pressed and also just numbers entered to ensure the errors was caught and handled appropriately.
+
+    * Player Choice:
+    To test capital and small H and X were typed in and also other random inputs such as spaces, other letters, words or numbers to ensure error caught and handled appropriately.
+
+    * Player Guess:
+    As this will only accept 4 numbers between 1-8, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Random special characters and blank entry were all tested to ensure errors were caught and handled appropriately.
+
+    * ENIGMA Code Hint:
+    The ENIGMA code was printed to the terminal during development to help with testing the code hint generated matched the player's guesses.  It was checked to ensure numbers in the correct position generated a GREEN hint, numbers in incorrect position generated a YELLOW hint and numbers not in the ENIGMA code at all generated a RED hint.
+
+    * Attempts Left:
+    Attempts left was checked by playing the game through to see if attempts left decreased by 1 each time and also that attempts left did not change if an input error was entered.
+
+    * Game Won / Game Lost
+    The game was tested on winning and losing to ensure the correct messages were displayed for both.
+
+    * Play Again
+    As mentioned above in the Features section.  To play again the user can type Y or N.  This was tested for lower and uppercase Y and N to check both worked.  Other inputs such as numbers, random words or letters and the enter key pressed were all checked to ensure the errors were handled correctly and appropriate feedback to the user was given.
+
 ### Username Input Section:
 
 * A message to the user to enter their name is seen first. This alerts the user on how to start playing the game.
@@ -158,60 +282,6 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 <img src="assets/screenshots/goodbye-screen.png"><br><br>
 
-<h2 id="future-features">Possible Future Features</h2>
-
-* The ENIGMA game is a one-player versus the computer game but this game could be made into a 2 player game. As with the original Mastermind Game the first player makes the code for the second player to guess. After that player has won or lost, it is then their turn to create the code for the other player to now attempt to guess. 
-
-* The ENIGMA game does not give the option to show high scores. This could be implemented using a Google Spreadsheet to store the number of attempts it took for each name entered. This scoreboard could then be displayed by printing the contents of it to the terminal.
-
-* To make this game harder for different levels more numbers could be added to the ENIGMA code or fewer attempts given. 
-
-<h2 id="testing">Development & Testing</h2>
-
-<a href="#top">Back to the top.</a>
-
-
-### Flow Chart
-
-The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in [Lucid Chart]( https://lucid.app/).
-
-<img src="assets/flowchart/enigma-flow-chart.png"><br><br>
-
-### Testing
-
-*   Methods such as print() as the code developed was used to check for errors.  This helped check everything was behaving as expected and functions such as generating the random numbers for the ENIGMA code were being generated correctly.  
-
-*   Any testing user inputs were printed back to the console to check all functions and methods were correctly applied to the input.  
-
-*   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues.
-
-*   After deployment all features were checked on a laptop, mobile (iPhone 13). The website was checked on Chrome, Firefox and Edge.
-
-*   The game was deployed early on in development and checked regularly to ensure game flow and any errors were handled early on.
-
-*   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. 
-
-    * User Name:
-    This will accept letters and numbers but cannot be blank or just numbers, the space key was pressed and also just numbers entered to ensure the errors was caught and handled appropriately.
-
-    * Player Choice:
-    To test capital and small H and X were typed in and also other random inputs such as spaces, other letters, words or numbers to ensure error caught and handled appropriately.
-
-    * Player Guess:
-    As this will only accept 4 numbers between 1-8, many other combinations of input were tested.  For example, more or fewer numbers were entered, numbers less than 1 or greater than 8 were entered.  Random special characters and blank entry were all tested to ensure errors were caught and handled appropriately.
-
-    * ENIGMA Code Hint:
-    The ENIGMA code was printed to the terminal during development to help with testing the code hint generated matched the player's guesses.  It was checked to ensure numbers in the correct position generated a GREEN hint, numbers in incorrect position generated a YELLOW hint and numbers not in the ENIGMA code at all generated a RED hint.
-
-    * Attempts Left:
-    Attempts left was checked by playing the game through to see if attempts left decreased by 1 each time and also that attempts left did not change if an input error was entered.
-
-    * Game Won / Game Lost
-    The game was tested on winning and losing to ensure the correct messages were displayed for both.
-
-    * Play Again
-    As mentioned above in the Features section.  To play again the user can type Y or N.  This was tested for lower and uppercase Y and N to check both worked.  Other inputs such as numbers, random words or letters and the enter key pressed were all checked to ensure the errors were handled correctly and appropriate feedback to the user was given.
-
 ### Validator Testing
 
 * <a href="http://pep8online.com" target="_blank">PEP8 ONLINE</a> was used for validating the python files. All python files were checked with no errors reported.
@@ -220,76 +290,6 @@ The flow of the game was laid out and structured to aid in the design of the con
 
 <img src="assets/screenshots/enigma-lighthouse.png"><br><br>
 
-
-<h2 id="technologies">Technologies</h2>
-
-<a href="#top">Back to the top.</a>
-
-Throughout the planning, design, testing and deployment of the ENIGMA game , I have used a number of technologies:
-
-
-### Languages
-<ol>
-    <li><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML</a>
-        <ul><li>The main structure of the game container</li></ul>
-    </li>
-    <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-        <ul><li>Within the template supplied by code institute</li></ul>
-    </li>
-    <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
-        <ul><li>For the gameplay logic</li></ul>
-    </li>
-    <li><a href="https://www.markdownguide.org/" target="_blank">Markdown</a>
-        <ul><li>For the content and structure of the README.md</li></ul>
-    </li>
-</ol>   
-
-### Version Control
-<ol>
-    <li><a href="https://github.com/" target="_blank">Git & Github</a>
-        <ul><li>For the hosting and version control of the game</li></ul>
-    </li>
-    <li><a href="https://www.gitpod.io/" target="_blank">Gitpod</a>
-        <ul><li>The development environment used for writing the code for the game</li></ul>
-    </li>
-</ol>
-
-
-### Applications    
-<ol>
-   <li><a href="https://lucid.app/" target="_blank">Lucid Chart</a>
-        <ul><li>For the creation of the flowchart</li></ul>
-    </li>
-    <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
-        <ul><li>For testing out ideas without interfering with code for website</li></ul>
-    </li>
-    <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
-        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and coding.</li></ul>
-    </li>
-</ol>
-    
-## Frameworks, Libraries and Programs
-
-### os
-The os library was imported to create a function to utilise the os.system to clear the terminal. 
-
-### random
-The random library was imported to access the built-in method of generating a random number selection using the randint() method. This then generates a random sequence of 4 numbers in a range of 1 – 8 for the ENIGMA code the user has to crack.
-
-<ol> 
-    <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
-        <ul>Used to delay the next line of text in the python terminal</ul>
-    </li>
-    <li><a href="https://pypi.org/project/termcolor/">Python termcolor library</a>
-        <ul>Used to add colour to the text in the python terminal</ul>
-    </li>
-    <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
-        <ul><li>To test and search for errors in the Python code</li></ul>
-    </li>
-    <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
-        <ul><li>To ensure high performance and quick loading times of the website</li></ul>
-    </li>
-</ol><br> 
 
 <h2 id="deployment">Deployment</h2>
 

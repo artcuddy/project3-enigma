@@ -1,27 +1,16 @@
 """ Player Class sets up player object """
-# import os to help clear terminal
 import os
-
-# import re to search blank spaces in username
 import re
-
-# import sys for type style
 import sys
-
-# import sleep to enable a delay
 from time import sleep
-
-# import pyfiglet for ascii art
 from pyfiglet import Figlet
-
-# import termcolor for adding colour to text
 from termcolor import colored
 
 
 class Player:
     """
     Player class get the players input for name,
-    option to view help instructions.
+    option to view game help instructions.
     Validate players quess inputs
     and return vaildation
     """
@@ -51,10 +40,10 @@ class Player:
     def validate_data(self, username):
         """
         Validates the username input
+        If input empty and enter hit return error,
+        or if only numbers entered return error
+        otherwise accept all characters for codename
         """
-        # If input empty and enter hit return error,
-        # or if only numbers entered return error
-        # otherwise accept all characters for codename
         try:
             if not username or re.search(r"^\s*$", username):
                 raise ValueError(colored('Sorry username ' +
@@ -83,34 +72,7 @@ class Player:
         # Show help screen if h entered
         if control_select == 'h':
             os.system("clear")
-            print("-----------------------\n")
-            print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
-            print("-----------------------\n")
-            print('You have ' + colored('10', 'yellow') + ' attempts ' +
-                  'to guess the ' + colored('ENIGMA ', 'red') + 'code\n')
-            print('The ' + colored('ENIGMA ', 'red') + 'code is ' +
-                  colored('4 ', 'yellow') +
-                  'random numbers between 1-8')
-            print('\nYour guess must be ' + colored('4 ', 'yellow') +
-                  'numbers, and ' + 'you can only use the same number once!')
-            print('\nAll numbers in the code must be between 1 and 8')
-            print("\nThe guess input format works " +
-                  "in two ways: '1234' or '1 2 3 4'")
-            print("-----------------------")
-            print('\nAfter each guess, you will get ' +
-                  'four responses in random order:\n')
-            print(colored("GREEN: ", "green") +
-                  "1 of your numbers is correct " +
-                  "& it's in the correct location!\n")
-            print(colored("YELLOW: ", "yellow") +
-                  "1 of your numbers is correct, " +
-                  "but it's not in the correct location!\n")
-            print(colored('RED: ', 'red') +
-                  '1 of your numbers is not in the ' +
-                  colored('ENIGMA ', 'red') + 'code at all')
-            print(colored('\nMatch all 4 numbers to crack the ', 'green') +
-                  colored('ENIGMA ', 'red') + colored('code\n', 'green'))
-            print("-----------------------")
+            helpscreen()
             help_select = input(
                 '\nTo Play game enter ' +
                 colored('P ', 'green') +
@@ -151,3 +113,37 @@ class Player:
             print(colored('Sorry, that is not a valid entry only ' +
                           'H or P accepted\n', 'red'))
             self.enigma_game_control()
+
+
+def helpscreen():
+    """
+    Display help screenn for intructions
+    """
+    print("-----------------------\n")
+    print(colored('\nHOW TO PLAY ENIGMA:\n', 'yellow'))
+    print("-----------------------\n")
+    print('You have ' + colored('10', 'yellow') + ' attempts ' +
+          'to guess the ' + colored('ENIGMA ', 'red') + 'code\n')
+    print('The ' + colored('ENIGMA ', 'red') + 'code is ' +
+          colored('4 ', 'yellow') +
+          'random numbers between 1-8')
+    print('\nYour guess must be ' + colored('4 ', 'yellow') +
+          'numbers, and ' + 'you can only use the same number once!')
+    print('\nAll numbers in the code must be between 1 and 8')
+    print("\nThe guess input format works " +
+          "in two ways: '1234' or '1 2 3 4'")
+    print("-----------------------")
+    print('\nAfter each guess, you will get ' +
+          'four responses in random order:\n')
+    print(colored("GREEN: ", "green") +
+          "1 of your numbers is correct " +
+          "& it's in the correct location!\n")
+    print(colored("YELLOW: ", "yellow") +
+          "1 of your numbers is correct, " +
+          "but it's not in the correct location!\n")
+    print(colored('RED: ', 'red') +
+          '1 of your numbers is not in the ' +
+          colored('ENIGMA ', 'red') + 'code at all')
+    print(colored('\nMatch all 4 numbers to crack the ', 'green') +
+          colored('ENIGMA ', 'red') + colored('code\n', 'green'))
+    print("-----------------------")

@@ -9,17 +9,15 @@ from codegenerator import Codegen
 from game import Welcome
 
 # import newgame class
-from game import Newgame
+from game import Game
 
 
 def main():
     """
     Run all program functions and methods to load game
     """
-    welcome = Welcome()
-
     # calling the Welcome class
-    welcome.welcome()
+    welcome = Welcome()
 
     # calling the Player class
     player = Player()
@@ -27,19 +25,22 @@ def main():
     # calling the Codegen class
     codegen = Codegen()
 
-    # calling the Newgame class
-    newgame = Newgame()
+    # calling the Game class
+    game = Game()
+
+    # calling the method in the Welcome class
+    welcome.welcome()
 
     # calling the methods in the Player class
     player.get_player_name()
     player.enigma_game_control()
 
-    # calling the methods in the Codegen class
+    # calling the method in the Codegen class
     codegen.create_enigma_list()
-    codegen.player_attempts()
 
-    # calling the methods in the Newgame class
-    newgame.start_new_game()
+    # calling the methods in the Game class
+    game.player_attempts()
+    game.start_new_game()
 
 
 if __name__ == '__main__':

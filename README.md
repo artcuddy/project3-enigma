@@ -470,7 +470,7 @@ If you want to make changes to the repo without affecting it, you can make a cop
 
 I have listed some of the resources I used for inspiration and in researching how to create the ENIGMA Codebreaker Game
 
-* Mastermind Game with Python: Tutorial: <a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Youtube</a>
+* Mastermind Game with Python: Tutorial: <a href="https://www.youtube.com/watch?v=NLfxNo7Q0Pk" target="_blank">Youtube</a>
 
 * Mastermind Mini Project by: <a href="https://github.com/monicode/Python-Mini-Projects/blob/master/mastermind%20colors.py" target="_blank">Monicode</a>
 
@@ -494,7 +494,7 @@ These resources helped me solve some of the issues encountered when developing t
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-This project was made possible due to the help & advice from my Mentor Rohit and all the Code Institute Slack community, extensive Googling and the Stack Overflow community.
+This project was made possible due to the help & advice from my Mentor Rohit, Code Institute Slack community, Stack Overflow community and a lot of extensive Googling.
 
 
 

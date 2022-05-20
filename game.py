@@ -13,10 +13,10 @@ code = Codegen()
 
 class Game:
     """
-    Player class get the players input for name,
-    option to view help instructions.
-    Validate players quess inputs
-    and return vaildation
+    Game class gets the players guess checks the players guess
+    is a vaild one. Checks the players guess against the ENIGMA
+    code prints win message if the code is cracked.
+    Keeps track of the attempts made and starts a new game
     """
     @staticmethod
     def get_player_guess():

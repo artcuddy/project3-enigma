@@ -89,6 +89,18 @@ As a user I want to:
 
 * Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!" utilising [sys-stdout](https://www.geeksforgeeks.org/sys-stdout-write-in-python/) and sleep to printout the letters as if it was a type writer.
 
+### Game files
+
+There are 4 game files with different classes which have been imported to the main run.py file I found this easier to work with than having a single large file.
+
+* run.py - The main game controller that runs the individual classes from the additional files
+
+* player.py - This file contains the Player gets the players input for name, option to view game help instructions. Validate players quess inputs and returns username vaildation
+
+* codegenerator.py - This file contains the Codegen class and generates the random ENIGMA Code
+
+* game.py - This file contains the Game class gets the players guess checks the players guess is a vaild one. Checks the players guess against the ENIGMA code prints win message if the code is cracked. Keeps track of the attempts made and starts a new game
+
 
 <h2 id="future-features">Possible Future Features</h2>
 

@@ -93,9 +93,9 @@ As a user I want to:
 
 There are 4 game files with different classes which have been imported to the main run.py file I found this easier to work with than having a single large file.
 
-* run.py - The main game controller that runs the individual classes from the additional files
+* run.py - The main game controller that runs the individual classes from the additional files and runs the game
 
-* player.py - This file contains the Player gets the players input for name, option to view game help instructions. Validate players quess inputs and returns username vaildation
+* player.py - This file contains the Player class gets the players input for name, option to view game help instructions. Validate players quess inputs and returns username vaildation
 
 * codegenerator.py - This file contains the Codegen class and generates the random ENIGMA Code
 

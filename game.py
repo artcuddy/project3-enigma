@@ -25,41 +25,42 @@ class Game:
         """
         while True:
             # issue default to catch errors in player guess
-            num_issue = False
+            number_issue = False
             unique_issue = False
-            len_issue = False
+            length_issue = False
 
             player_guess = input("Enter your guess: ")
 
             for number in player_guess:
                 try:
                     if int(number) < 1 or int(number) > 8:
-                        num_issue = True
+                        number_issue = True
 
                 except ValueError:
-                    num_issue = True
+                    number_issue = True
 
-            if num_issue:
+            if number_issue:
                 print(colored("\nYou can only use numbers " +
                               "1-8 as guesses!\n", "red"))
             else:
                 for number in player_guess:
                     if player_guess.count(number) > 1:
                         unique_issue = True
-                    if unique_issue:
-                        print(colored("\nYou can only use each " +
-                                      "number once!\n", "red"))
-                if len(player_guess) != 4:
-                    len_issue = True
-                if len_issue:
-                    print(colored("\nYour guess can only consist " +
-                                  "of only 4 numbers!\n", "red"))
+                if unique_issue:
+                    print(colored("\nYou can only use each " +
+                                  "number once!\n", "red"))
                 else:
-                    guess_list = list(player_guess)
-                    for i in range(4):
-                        guess_list[i] = int(guess_list[i])
-                    print('\nYou guessed: ' + player_guess)
-                    return guess_list
+                    if len(player_guess) != 4:
+                        length_issue = True
+                    if length_issue:
+                        print(colored("\nYour guess can only consist " +
+                                      "of only 4 numbers!\n", "red"))
+                    else:
+                        guess_list = list(player_guess)
+                        for i in range(4):
+                            guess_list[i] = int(guess_list[i])
+                        print('\nYou guessed: ' + player_guess)
+                        return guess_list
 
     def check_values(self, enigma, user):
         """

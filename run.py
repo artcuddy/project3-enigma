@@ -1,14 +1,14 @@
 """ Main Game Control """
-# import player class
+# import Player class
 from player import Player
 
-# import codegenerator class
+# import Codegen class
 from codegenerator import Codegen
 
-# import welcome class
+# import Welcome class
 from game import Welcome
 
-# import newgame class
+# import Game class
 from game import Game
 
 

@@ -1,4 +1,4 @@
-<h1 id="top"><a href="https://enigma-code-breaker.herokuapp.com/">ENIGMA CODE BREAKER</a></h1>
+<h1 id="top"><a href="https://enigma-code-breaker.herokuapp.com/" target="_blank">ENIGMA CODE BREAKER</a></h1>
 
 ### Contents
 <ul>
@@ -29,10 +29,10 @@
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
-This is a simple python code breaking game losely based on the Master Mind game made by Mordecai Meirowitz in 1970. It's a single player versus the computer game. [Mastermind]( https://en.wikipedia.org/wiki/Mastermind_(board_game)).
+This is a simple python code breaking game losely based on the Master Mind game made by Mordecai Meirowitz in 1970. It's a single player versus the computer game. <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game))" target="_blank">Mastermind</a>
 
 ### Demo
-A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/">**HERE**</a><br><br>
+A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/" target="_blank">**HERE**</a><br><br>
 <img src="assets/screenshots/enigma-welcome-screen.png"><br><br>
 <a href="#top">Back to the top.</a>
 
@@ -81,13 +81,13 @@ As a user I want to:
 
 ### Title Section:
 
-* [Pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/#:~:text=pyfiglet%20takes%20ASCII%20text%20and,pyfiglet%20module%20%3A%20pip%20install%20pyfiglet) was installed and import pyfiglet was used to generate ASCII art for the title and subtitle of the game.
+* <a href="https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/#:~:text=pyfiglet%20takes%20ASCII%20text%20and,pyfiglet%20module%20%3A%20pip%20install%20pyfiglet" target="_blank">Pyfiglet</a> was installed and import pyfiglet was used to generate ASCII art for the title and subtitle of the game.
 
 * The Figlet font banner3-D was used for the title of the game 
 
 * For the subtitle the Figlet font used was digital.
 
-* Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!" utilising [sys-stdout](https://www.geeksforgeeks.org/sys-stdout-write-in-python/) and sleep to printout the letters as if it was a type writer.
+* Text is run from left to right over the screen with the message "Guess all 4 numbers to crack the ENIGMA code!" utilising <a href="https://www.geeksforgeeks.org/sys-stdout-write-in-python/" target="_blank">sys-stdout</a> and sleep to printout the letters as if it was a type writer.
 
 ### Game files
 
@@ -122,7 +122,7 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
         <ul><li>The main structure of the game container</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-        <ul><li>Within the template supplied by code institute</li></ul>
+        <ul><li>Within the base template by code institute</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
         <ul><li>For the gameplay logic</li></ul>
@@ -135,10 +135,10 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
 ### Version Control
 <ol>
     <li><a href="https://github.com/" target="_blank">Git & Github</a>
-        <ul><li>For the hosting and version control of the game</li></ul>
+        <ul><li>For the hosting and version control of the ENIGMA game</li></ul>
     </li>
     <li><a href="https://www.gitpod.io/" target="_blank">Gitpod</a>
-        <ul><li>The development environment used for writing the code for the game</li></ul>
+        <ul><li>The development environment used for writing the code for the ENIGMA game</li></ul>
     </li>
 </ol>
 
@@ -149,10 +149,10 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
         <ul><li>For the creation of the flowchart</li></ul>
     </li>
     <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
-        <ul><li>For testing out ideas without interfering with code for website</li></ul>
+        <ul><li>For testing out different code strategies without interfering with code for website</li></ul>
     </li>
     <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
-        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and coding.</li></ul>
+        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and solving coding issues.</li></ul>
     </li>
 </ol>
     
@@ -165,10 +165,10 @@ The os library was imported to create a function to utilise the os.system to cle
 The random library was imported to access the built-in method of generating a random number selection using the randint() method. This then generates a random sequence of 4 numbers in a range of 1 – 8 for the ENIGMA code the user has to crack.
 
 <ol> 
-    <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
+    <li><a href="https://docs.python.org/3/library/time.html" target="_blank">Python time library</a>
         <ul>Used to delay the next line of text in the python terminal</ul>
     </li>
-    <li><a href="https://pypi.org/project/termcolor/">Python termcolor library</a>
+    <li><a href="https://pypi.org/project/termcolor/" target="_blank">Python termcolor library</a>
         <ul>Used to add colour to the text in the python terminal</ul>
     </li>
     <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
@@ -370,9 +370,9 @@ To validate the players guess and make sure that only 4 numbers between 1- 8 whe
 
 ### Heroku
 
-The project was deployed via [Heroku]( https://id.heroku.com/login), and the live link can be found here: [ENIGMA – Code Breaker](https://enigma-code-breaker.herokuapp.com/) 
+The project was deployed via <a href="https://id.heroku.com/login" target="_blank">Heroku</a>, and the live link can be found here: <a href="https://enigma-code-breaker.herokuapp.com/" target="_blank">ENIGMA – Code Breaker</a>
 
-This project was developed utilising the [Code Institute Template]( https://github.com/Code-Institute-Org/python-essentials-template).  Some of the deployment steps below are specifically required for the new CI template and may not be applicable to older versions, or different projects.
+This project was developed utilising the <a href="https://github.com/Code-Institute-Org/python-essentials-template" target="_blank">Code Institute Template</a>. Some of the deployment steps below are specifically required for the new CI template and may not be applicable to older versions, or different projects.
 
 Before deploying to Heroku pip3 freeze > requirements.txt was used to add pyfiglet and termcolor imports for deployment.
 
@@ -425,7 +425,7 @@ If you want to make changes to the repo without affecting it, you can make a cop
 
 <ol>
     <li>Log in to your GitHub account</li>
-    <li>Navigate to the repository <a href="https://github.com/artcuddy/project3-enigma"><strong>HERE</strong></a></li>
+    <li>Navigate to the repository <a href="https://github.com/artcuddy/project3-enigma" target="_blank"><strong>HERE</strong></a></li>
     <li>Select the 'Fork' button in the top right corner of the page (under your account image)</li>
     <li>The repo has now been copied into your own repos and you can work on it in your chosen IDE</li>
     <li>If you have any suggestions to make regards to the code to make the site better, you can put in a pull request</li>
@@ -434,7 +434,7 @@ If you want to make changes to the repo without affecting it, you can make a cop
 #### Cloning the repo with GitPod
 <ol>
     <li>Log in to your GitHub account</li>
-    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma"><strong>HERE</strong></a></li>
+    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma" target="_blank"><strong>HERE</strong></a></li>
     <li>Select the 'Code' button above the file list on the right had side</li>
     <li>Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it</li>
     <li>Open a new workspace in GitPod</li>
@@ -445,7 +445,7 @@ If you want to make changes to the repo without affecting it, you can make a cop
 #### Github Desktop
 <ol>
     <li>Log in to your GitHub account</li>
-    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma"><strong>HERE</strong></a></li>
+    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma" target="_blank"><strong>HERE</strong></a></li>
     <li>Select the 'Code' button above the file list on the right had side</li>
     <li>Select 'Open with GitHub Desktop'</li>
     <li>If you haven't already installed GitHub desktop application - you will need to follow the relevant steps to do this</li>
@@ -455,7 +455,7 @@ If you want to make changes to the repo without affecting it, you can make a cop
 #### Download and extract the zip directly from GitHub
 <ol>
     <li>Log in to your GitHub account</li>
-    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma"><strong>HERE</strong></a></li>
+    <li>Navigate to the Repository <a href="https://github.com/artcuddy/project3-enigma" target="_blank"><strong>HERE</strong></a></li>
     <li>Select the 'Code' button above the file list on the right had side</li>
     <li>Select 'Download Zip'</li>
     <li>Once you have the Zip downloaded, open it with your prefered file decompression software</li>

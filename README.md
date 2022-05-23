@@ -480,6 +480,9 @@ I have listed some of the resources I used for inspiration and in researching ho
 
 * Mastermind in Python <a href="https://www.ddtechblog.com/Mastermind-in-python" target="_blank">DDTECHBLOG</a>
 
+* Simple Mastermind game in Python <a href="https://maxinterview.com/code/simple-mastermind-programpython-6E413B22123D811/" target="_blank">Maxinterview</a>
+
+
 These resources helped me solve some of the issues encountered when developing the game
 
 * How to use Pyfiglet to display the game Heading & Subheading <a href="https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/" target="_blank">Pyfiglet</a>

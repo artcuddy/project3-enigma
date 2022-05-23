@@ -29,7 +29,7 @@
 
 ENIGMA - Code Breaking Game, is a Python terminal game that runs on Heroku.
 
-This is a simple python code breaking game losely based on the Master Mind game made by Mordecai Meirowitz in 1970. It's a single player versus the computer game. <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game))" target="_blank">Mastermind</a>
+This is a simple python code breaking game losely based on the Master Mind game made by Mordecai Meirowitz in 1970. It's a single player versus the computer game. <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank">Mastermind</a>
 
 ### Demo
 A live version of the game can be found <a href="https://enigma-code-breaker.herokuapp.com/" target="_blank">**HERE**</a><br><br>

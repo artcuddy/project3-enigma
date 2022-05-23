@@ -149,10 +149,10 @@ Throughout the planning, design, testing and deployment of the ENIGMA game , I h
         <ul><li>For the creation of the flowchart</li></ul>
     </li>
     <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
-        <ul><li>For testing out different code strategies without interfering with code for website</li></ul>
+        <ul><li>For testing out different code strategies without interfering with code for the ENIGMA Game</li></ul>
     </li>
     <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
-        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and solving coding issues.</li></ul>
+        <ul><li>For communicating with fellow students and troubleshooting problems with the different environments used during the course and solving coding issues.</li></ul>
     </li>
 </ol>
     
@@ -175,7 +175,7 @@ The random library was imported to access the built-in method of generating a ra
         <ul><li>To test and search for errors in the Python code</li></ul>
     </li>
     <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
-        <ul><li>To ensure high performance and quick loading times of the website</li></ul>
+        <ul><li>To ensure high performance and quick loading times of the ENIGMA game</li></ul>
     </li>
 </ol><br> 
 
@@ -186,7 +186,7 @@ The random library was imported to access the built-in method of generating a ra
 
 ### Flow Chart
 
-The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in [Lucid Chart]( https://lucid.app/).
+The flow of the game was laid out and structured to aid in the design of the control flow statements such as if-elif-else statements, while loops and for loops. This also allowed the design of the user input validation checks to be visually clear before the code was written. This was created in <a href="https://lucid.app/" target="_blank">Lucid Chart</a>.
 
 <img src="assets/flowchart/enigma-flow-chart.png"><br><br>
 
@@ -198,9 +198,9 @@ The flow of the game was laid out and structured to aid in the design of the con
 
 *   Errors or warnings were fixed as they appeared such as indentation errors, lines too long or extra space issues. No errors are reported now.
 
-*   After deployment all features were checked on a laptop, mobile (iPhone 13). The website was checked on Chrome, Firefox and Edge.
+*   After deployment all features were checked on an IMac and PC laptop. The game was checked on Chrome, Firefox and Edge.
 
-*   The game was deployed early on in development and checked regularly to ensure game flow and any errors pn Heroku were handled .
+*   The game was deployed early on in development and checked regularly to ensure game flow and any errors on Heroku were handled .
 
 *   Testing inputs were used to ensure user inputs would be handled correctly and appropriate feedback to the user was shown on screen. 
 
@@ -300,9 +300,9 @@ RED: One of the numbers is not in the ENIGMA code at all<br><br>
 
 I had an issue when using termcolor for the ENIGMA hint colour words GREEN, YELLOW & RED.
 
-After a few Google searches I found that lists don't have a concept of colour in Python.
+After a few Google searches and head scratching I discovered that lists don't have a concept of colour in Python.
 
-To be able do this 3 new lists were made, 1 for GREEN return_list_green, 1 for Yellow return_list_yellow and 1 for RED return_list_red. Then append and join the 3 lists in to one. Each item in the list is looped through so termcolor works on print and can add the individual colors to the items in the return_list.
+To be able to add colour to the return_list 3 new lists were made, 1 for GREEN return_list_green, 1 for Yellow return_list_yellow and 1 for RED return_list_red. Then append and join the 3 lists in to one. Each item in the list is looped through so termcolor works on print and can add the individual colors to the items in the return_list.
 
 >**Join lists:**
 >
@@ -412,7 +412,7 @@ using the Python buildpack.
 buildpacks can be found in the documentation. To check the buildpack for the
 project you can enter heroku buildpacks in the terminal.
 
-* Click either **Enable Automatic Deploys** for automatic deployment when you push updates to Github.
+* Click **Enable Automatic Deploys** for automatic deployment when you push updates to Github.
 
 * Select the correct branch for deployment from the drop-down menu and click **Deploy Branch** for manual deployment.
 
